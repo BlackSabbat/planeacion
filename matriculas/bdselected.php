@@ -2,7 +2,7 @@
     require_once($_SERVER["DOCUMENT_ROOT"]."/classPage.php");
     $page = new Page();
     print $page->getTop();
-    
+
     print <<<EOF
         <div id="mainContent">
             <div id="menu">
@@ -11,7 +11,7 @@
                     <li><a href="../about.php"><About Me>Acerca de</a></li>
                     <li><a href="../contact.php">Contactar</a></li>
                 </ul>
-                
+
             </div> <!-- end menu -->
             <table>
                 <td>
@@ -36,11 +36,11 @@
                 <td>
                     <div id="content">
                         <p>Base de Datos Seleccionada: &nbsp;
-                
+
 EOF;
                         echo $_POST["nombreBD"];
-                        
-                        
+
+
                             print <<< EOF
                             </p>
                             <!-- <form method = "GET" action="reporte.php?reporte&nombreBD"> -->
@@ -58,6 +58,7 @@ EOF;
                                         print <<<EOF
                                         ">
                                         </br>
+                                        <input type="hidden" name="periodo_escolar" value="">
                                     </div>
                                     <div align = "left">
                                         <input id="submit" type="submit" name="submit" value="Aplicar">

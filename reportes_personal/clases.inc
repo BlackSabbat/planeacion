@@ -753,7 +753,7 @@ EOF;
                 $sexo = (substr ($row['curp'], 10, 1));
                 #echo "<p>Empleado:$row['nombre']"; echo " "; echo "CURP:$row['curp']";
                 #echo "tipo: $row['tipo'] </br>";
-                if ($sexo == 'H' and $row[tipo] == 'federal') 
+                if ($sexo == 'H' and $row['tipo'] == 'federal') 
                     $contH_fed ++;
                 if ($sexo == 'M' and $row['tipo'] == 'federal')   
                     $contM_fed ++;

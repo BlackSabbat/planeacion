@@ -345,54 +345,53 @@ EOF;
               
                 //echo "carrera:$row[carrera]</br>"; 
 
-                if ($row[hom16] != null)
+                if ($row['hom16'] != null)
                 {
 
-                    $rubro = $row[carrera];
-
-                    if ($swAbierta == 'si'){
-                        $rubro = "$rubro  abierta";
-                    }
-                    if ($swVespertino == 'si'){
+                    $rubro = $row['carrera'];
+                    
+                    if ($row['abierta'] == 'si')
+		        $rubro = "$rubro  abierta";
+		    
+		    if ($row['vespertino'] == 'si')
                         $rubro = "$rubro  vesp";
-                    }
-                    if ($swDistancia == 'si'){
-                        $rubro = "$rubro  dist.";
-                    }
+                        
+		    if ($row['distancia']== 'si')
+		        $rubro = "$rubro  dist.";
 
                     //CALCULOS EN EL REPORTE
 
                     //detalle de totales (hombres + mujeres)
-                    $total16 = $row[hom16] + $row[muj16];
-                    $total17 = $row[hom17] + $row[muj17];
-                    $total18 = $row[hom18] + $row[muj18];
-                    $total19 = $row[hom19] + $row[muj19];
-                    $total20 = $row[hom20] + $row[muj20];
-                    $total21 = $row[hom21] + $row[muj21];
-                    $total22 = $row[hom22] + $row[muj22];
-                    $total23 = $row[hom23] + $row[muj23];
-                    $total24 = $row[hom24] + $row[muj24];
-                    $total25 = $row[hom25] + $row[muj25];
-                    $total26 = $row[hom26] + $row[muj26];
-                    $total27 = $row[hom27] + $row[muj27];
-                    $total28 = $row[hom28] + $row[muj28];
-                    $total29 = $row[hom29] + $row[muj29];
-                    $total30 = $row[hom30] + $row[muj30];
-                    $total31 = $row[hom31] + $row[muj31];
-                    $total32 = $row[hom32] + $row[muj32];
-                    $total33 = $row[hom33] + $row[muj33];
-                    $total34 = $row[hom34] + $row[muj34];
-                    $total35 = $row[hom35] + $row[muj35]; 
-                    $total36 = $row[hom36] + $row[muj36];
-                    $total37 = $row[hom37] + $row[muj37];
-                    $total38 = $row[hom38] + $row[muj38];
-                    $total39 = $row[hom39] + $row[muj39];
+                    $total16 = $row['hom16'] + $row['muj16'];
+                    $total17 = $row['hom17'] + $row['muj17'];
+                    $total18 = $row['hom18'] + $row['muj18'];
+                    $total19 = $row['hom19'] + $row['muj19'];
+                    $total20 = $row['hom20'] + $row['muj20'];
+                    $total21 = $row['hom21'] + $row['muj21'];
+                    $total22 = $row['hom22'] + $row['muj22'];
+                    $total23 = $row['hom23'] + $row['muj23'];
+                    $total24 = $row['hom24'] + $row['muj24'];
+                    $total25 = $row['hom25'] + $row['muj25'];
+                    $total26 = $row['hom26'] + $row['muj26'];
+                    $total27 = $row['hom27'] + $row['muj27'];
+                    $total28 = $row['hom28'] + $row['muj28'];
+                    $total29 = $row['hom29'] + $row['muj29'];
+                    $total30 = $row['hom30'] + $row['muj30'];
+                    $total31 = $row['hom31'] + $row['muj31'];
+                    $total32 = $row['hom32'] + $row['muj32'];
+                    $total33 = $row['hom33'] + $row['muj33'];
+                    $total34 = $row['hom34'] + $row['muj34'];
+                    $total35 = $row['hom35'] + $row['muj35']; 
+                    $total36 = $row['hom36'] + $row['muj36'];
+                    $total37 = $row['hom37'] + $row['muj37'];
+                    $total38 = $row['hom38'] + $row['muj38'];
+                    $total39 = $row['hom39'] + $row['muj39'];
 
                     //totales finales en el reporte (hombres, mujeres y hombres + mujeres)
 
-                    $hom_carrera = $row[hom16] + $row[hom17] + $row[hom18] + $row[hom19] + $row[hom20] + $row[hom21] + $row[hom22] + $row[hom23] + $row[hom24] + $row[hom25] + $row[hom26] + $row[hom27] + $row[hom28] + $row[hom29] + $row[hom30] + $row[hom31] + $row[hom32] + $row[hom33] + $row[hom34] + $row[hom35] + $row[hom36] + $row[hom37] + $row[hom38] + $row[hom39];
+                    $hom_carrera = $row['hom16'] + $row['hom17'] + $row['hom18'] + $row['hom19'] + $row['hom20'] + $row['hom21'] + $row['hom22'] + $row['hom23'] + $row['hom24'] + $row['hom25'] + $row['hom26'] + $row['hom27'] + $row['hom28'] + $row['hom29'] + $row['hom30'] + $row['hom31'] + $row['hom32'] + $row['hom33'] + $row['hom34'] + $row['hom35'] + $row['hom36'] + $row['hom37'] + $row['hom38'] + $row['hom39'];
 
-                    $muj_carrera = $row[muj16] + $row[muj17] + $row[muj18] + $row[muj19] + $row[muj20] + $row[muj21] + $row[muj22] + $row[muj23] + $row[muj24] + $row[muj25] + $row[muj26] + $row[muj27] + $row[muj28] + $row[muj29] + $row[muj30] + $row[muj31] + $row[muj32] + $row[muj33] + $row[muj34] + $row[muj35] + $row[muj37] + $row[muj37] + $row[muj38] + $row[muj39];
+                    $muj_carrera = $row['muj16'] + $row['muj17'] + $row['muj18'] + $row['muj19'] + $row['muj20'] + $row['muj21'] + $row['muj22'] + $row['muj23'] + $row['muj24'] + $row['muj25'] + $row['muj26'] + $row['muj27'] + $row['muj28'] + $row['muj29'] + $row['muj30'] + $row['muj31'] + $row['muj32'] + $row['muj33'] + $row['muj34'] + $row['muj35'] + $row['muj37'] + $row['muj37'] + $row['muj38'] + $row['muj39'];
 
                     $gran_carrera = $total16 + $total17 + $total18 + $total19 + $total20 + $total21 + $total22 + $total23 + $total24 + $total25 + $total26 + $total27 + $total28 + $total29 + $total30 + $total31 + $total32 + $total33 + $total34 + $total35 + $total36 + $total37 + $total38 + $total39;
 
@@ -487,55 +486,55 @@ EOF;
 EOF;
 
                     # Actualizar totales generales
-                    $total_hom_16  = $total_hom_16 + $row[hom16];
-                    $total_hom_17  = $total_hom_17 + $row[hom17];
-                    $total_hom_18  = $total_hom_18 + $row[hom18];
-                    $total_hom_19  = $total_hom_19 + $row[hom19];
-                    $total_hom_20  = $total_hom_20 + $row[hom20];
-                    $total_hom_21  = $total_hom_21 + $row[hom21];
-                    $total_hom_22  = $total_hom_22 + $row[hom22];
-                    $total_hom_23  = $total_hom_23 + $row[hom23];
-                    $total_hom_24  = $total_hom_24 + $row[hom24];
-                    $total_hom_25  = $total_hom_25 + $row[hom25];
-                    $total_hom_26  = $total_hom_26 + $row[hom26];
-                    $total_hom_27  = $total_hom_27 + $row[hom27];
-                    $total_hom_28  = $total_hom_28 + $row[hom28];
-                    $total_hom_29  = $total_hom_29 + $row[hom29];
-                    $total_hom_30  = $total_hom_30 + $row[hom30];
-                    $total_hom_31  = $total_hom_31 + $row[hom31];
-                    $total_hom_32  = $total_hom_32 + $row[hom32];
-                    $total_hom_33  = $total_hom_33 + $row[hom33];
-                    $total_hom_34  = $total_hom_34 + $row[hom34];
-                    $total_hom_35  = $total_hom_35 + $row[hom35];
-                    $total_hom_36  = $total_hom_36 + $row[hom36];
-                    $total_hom_37  = $total_hom_37 + $row[hom37];
-                    $total_hom_38  = $total_hom_38 + $row[hom38];
-                    $total_hom_39  = $total_hom_39 + $row[hom39];
+                    $total_hom_16  = $total_hom_16 + $row['hom16'];
+                    $total_hom_17  = $total_hom_17 + $row['hom17'];
+                    $total_hom_18  = $total_hom_18 + $row['hom18'];
+                    $total_hom_19  = $total_hom_19 + $row['hom19'];
+                    $total_hom_20  = $total_hom_20 + $row['hom20'];
+                    $total_hom_21  = $total_hom_21 + $row['hom21'];
+                    $total_hom_22  = $total_hom_22 + $row['hom22'];
+                    $total_hom_23  = $total_hom_23 + $row['hom23'];
+                    $total_hom_24  = $total_hom_24 + $row['hom24'];
+                    $total_hom_25  = $total_hom_25 + $row['hom25'];
+                    $total_hom_26  = $total_hom_26 + $row['hom26'];
+                    $total_hom_27  = $total_hom_27 + $row['hom27'];
+                    $total_hom_28  = $total_hom_28 + $row['hom28'];
+                    $total_hom_29  = $total_hom_29 + $row['hom29'];
+                    $total_hom_30  = $total_hom_30 + $row['hom30'];
+                    $total_hom_31  = $total_hom_31 + $row['hom31'];
+                    $total_hom_32  = $total_hom_32 + $row['hom32'];
+                    $total_hom_33  = $total_hom_33 + $row['hom33'];
+                    $total_hom_34  = $total_hom_34 + $row['hom34'];
+                    $total_hom_35  = $total_hom_35 + $row['hom35'];
+                    $total_hom_36  = $total_hom_36 + $row['hom36'];
+                    $total_hom_37  = $total_hom_37 + $row['hom37'];
+                    $total_hom_38  = $total_hom_38 + $row['hom38'];
+                    $total_hom_39  = $total_hom_39 + $row['hom39'];
 
-                    $total_muj_16  = $total_muj_16 + $row[muj16];
-                    $total_muj_17  = $total_muj_17 + $row[muj17];
-                    $total_muj_18  = $total_muj_18 + $row[muj18];
-                    $total_muj_19  = $total_muj_19 + $row[muj19];
-                    $total_muj_20  = $total_muj_20 + $row[muj20];
-                    $total_muj_21  = $total_muj_21 + $row[muj21];
-                    $total_muj_22  = $total_muj_22 + $row[muj22];
-                    $total_muj_23  = $total_muj_23 + $row[muj23];
-                    $total_muj_24  = $total_muj_24 + $row[muj24];
-                    $total_muj_25  = $total_muj_25 + $row[muj25];
-                    $total_muj_26  = $total_muj_26 + $row[muj26];
-                    $total_muj_27  = $total_muj_27 + $row[muj27];
-                    $total_muj_28  = $total_muj_28 + $row[muj28];
-                    $total_muj_29  = $total_muj_29 + $row[muj29];
-                    $total_muj_30  = $total_muj_30 + $row[muj30];
-                    $total_muj_31  = $total_muj_31 + $row[muj31];
-                    $total_muj_32  = $total_muj_32 + $row[muj32];
-                    $total_muj_33  = $total_muj_33 + $row[muj33];
-                    $total_muj_34  = $total_muj_34 + $row[muj34];
-                    $total_muj_35  = $total_muj_35 + $row[muj35];
-                    $total_muj_36  = $total_muj_36 + $row[muj36];
-                    $total_muj_37  = $total_muj_37 + $row[muj37];
-                    $total_muj_38  = $total_muj_38 + $row[muj38];
-                    $total_muj_39  = $total_muj_39 + $row[muj39];
+                    $total_muj_16  = $total_muj_16 + $row['muj16'];
+                    $total_muj_17  = $total_muj_17 + $row['muj17'];
+                    $total_muj_18  = $total_muj_18 + $row['muj18'];
+                    $total_muj_19  = $total_muj_19 + $row['muj19'];
+                    $total_muj_20  = $total_muj_20 + $row['muj20'];
+                    $total_muj_21  = $total_muj_21 + $row['muj21'];
+                    $total_muj_22  = $total_muj_22 + $row['muj22'];
+                    $total_muj_23  = $total_muj_23 + $row['muj23'];
+                    $total_muj_24  = $total_muj_24 + $row['muj24'];
+                    $total_muj_25  = $total_muj_25 + $row['muj25'];
+                    $total_muj_26  = $total_muj_26 + $row['muj26'];
+                    $total_muj_27  = $total_muj_27 + $row['muj27'];
+                    $total_muj_28  = $total_muj_28 + $row['muj28'];
+                    $total_muj_29  = $total_muj_29 + $row['muj29'];
+                    $total_muj_30  = $total_muj_30 + $row['muj30'];
+                    $total_muj_31  = $total_muj_31 + $row['muj31'];
+                    $total_muj_32  = $total_muj_32 + $row['muj32'];
+                    $total_muj_33  = $total_muj_33 + $row['muj33'];
+                    $total_muj_34  = $total_muj_34 + $row['muj34'];
+                    $total_muj_35  = $total_muj_35 + $row['muj35'];
+                    $total_muj_36  = $total_muj_36 + $row['muj36'];
+                    $total_muj_37  = $total_muj_37 + $row['muj37'];
+                    $total_muj_38  = $total_muj_38 + $row['muj38'];
+                    $total_muj_39  = $total_muj_39 + $row['muj39'];
                           
                     $total_gran_16 = $total_gran_16 + $total16;
                     $total_gran_17 = $total_gran_17 + $total17;
