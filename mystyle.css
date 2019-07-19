@@ -1,0 +1,272 @@
+fieldset { border:0px;}
+
+#menu {
+      float: left;
+      width: 100%;
+      background-color: #941100;
+      border: 0;
+}
+
+#menu ul {
+          text-align: left;
+}
+#mainHead td {
+          text-align: center;
+          font-family: Times New Roman;
+          font-weight: bold;
+          color: #941100;
+          font-size: 40px;
+}
+#mainHead  {
+          text-align: center;
+          font-family: Arial;
+          color: #941100;    
+}
+
+#subtitulo {
+          text-align: center;
+          font-family: Arial;
+          color: #941100;
+          font-size: 14px;
+}
+
+
+#menu ul li {
+          display: inline;
+          list-style-type: none;
+      }
+      
+#menu li a {
+        display: block;
+        text-decoration: none;
+        border-right: 2px solid #FFFFFF;
+        padding: 3px 10px;
+        float: left;
+        color: #FFFFFF;
+}
+
+#menu li a:hover {
+        background-color: #CCCCCC;
+}
+
+
+body {
+          font-family: arial, helvetica;
+}
+
+
+#content {
+        clear: right;
+        float: right;
+        width: 700px;
+        padding: 2px 0;
+        margin: 0 0 0 30px;
+        display: inline;
+}
+
+#sidebar {
+    float: left;
+    width: 350px;
+    padding: 20px 20px;
+    margin: 0 20px 0 0;
+    display: inline;
+    text-align: left;
+    vertical-align: top;
+}
+
+#sidebar2 {
+        float: left;
+        width: 248px;
+        padding: 20px 20px;
+        margin: 0 20px 0 0;
+        display: inline;
+        text-align: left;
+        vertical-align: top;
+}
+#footer {
+          text-align: center;
+          font-size: 12px;
+          padding: 20px;
+          width: 96%;
+          margin-top: 150px;
+          height: 15%;
+          clear: left;
+          float: right;
+          
+          
+}
+
+#renglon {
+  border: none;
+}
+
+#rubro {
+    text-align: left;
+    background: black;
+    color: #FFFFFF;
+}
+
+table {
+  border-collapse: collapse;
+  clear: left;
+  float: left;
+  border: black;
+}
+
+table td{
+    vertical-align: top;
+}
+
+table tr td{
+  padding: 3px;
+  font-size: 16px;
+  text-align: left;
+}
+
+tr.hide_all > td, th.hide_all{
+    border: 0;
+ }
+
+#trChico:nth-child(even) {
+    background-color: rgb(56, 196, 196);
+    vertical-align: top;
+
+}
+
+table th {
+  font-size: 14px;
+} 
+
+#detalle:nth-child(even){
+    background: rgb(211, 211, 211);
+}
+
+#total {
+    background: black;
+    color: #FFFFFF;
+}
+
+table tr th {
+    font-size: 16px;
+    text-align: left;
+  } 
+
+#encabezadoTabla {
+    font-size: 16px;
+    text-align: center;
+}
+
+#subEncabezado {
+    background: rgb(0, 0, 0);
+    font-size: 10px;
+    padding: 3px;
+    color: #FFFFFF;
+    text-align: center;
+    border: 1px solid #cccaca;
+} 
+
+#TotalesChico {
+    background: rgb(0, 0, 0);
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: right;
+} 
+
+#DetalleChico {
+    font-style: normal;
+    font-size: 12px;
+    text-align: right;
+}
+
+#DetalleChicoIzq {
+    font-style: normal;
+    font-size: 12px;
+    text-align: left;
+}
+
+#DetalleChicoCen {
+    font-style: normal;
+    font-size: 12px;
+    text-align: center;
+}
+
+#DetalleTitulo {
+    font-style: normal;
+    font-size: 12px;
+    text-align: left;
+}
+
+#DetalleChicoTotal {
+    font-style: normal;
+    font-size: 12px;
+    background: rgb(56, 196, 196);
+    padding: 3px;
+    text-align: right;
+    vertical-align: top;
+}
+
+#DetallePrimerIngreso {
+    font-style: normal;
+    font-size: 12px;
+    background: rgb(255, 246, 66);
+    padding: 3px;
+    text-align: right;
+}
+
+#DetalleMasChico {
+    font-style: normal;
+    font-size: 12px;
+    text-align: right;
+    reset
+}
+
+#DetalleMasChicoTotal {
+    font-style: normal;
+    font-size: 12px;
+    background: rgb(252, 250, 214);
+    text-align: right;
+    reset
+}
+
+#SubEncabezadoChico {
+    font-style: normal;
+    font-size: 10px;
+    text-align: left;
+    reset
+}
+
+#SubEncabezadoFecha {
+    font-style: normal;
+    font-size: 12px;
+    text-align: left;
+    reset
+}
+
+#Encabezado1 {
+    font-style: normal;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    reset
+}
+
+
+.form-field {
+    clear: both;
+    padding: 10px;
+    width: 350px;
+}
+.form-field label {
+    float: left;
+    width: 150px;
+    text-align: right;
+}
+.form-field input {
+    float: right;
+    width: 150px;
+    text-align: left;
+}
+
+#submit {
+    text-align: center;
+}
