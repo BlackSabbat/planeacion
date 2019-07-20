@@ -80,7 +80,7 @@ EOF;
     $swPrintHeadings                     = 0;
 
     # Consulta Empleados Plaza Docente
-    $query = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $query = "select * from $BDSeleccionada where docente_distancia = 'si'   and tipo = 'federal'";
     $result = $db->query($query);
 
     $contadorHombre_Uno_Reporte3         = 0;
@@ -212,7 +212,7 @@ EOF;
     $swPrintHeadings                     = 0;
 
     # Consulta Empleados Plaza Docente
-    $query = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $query = "select * from $BDSeleccionada where docente_distancia = 'si'   and tipo = 'estatal' and observaciones not like '%dualidad de plaza%'";
     $result = $db->query($query);
 
     $contadorHombre_Uno_Reporte3         = 0;

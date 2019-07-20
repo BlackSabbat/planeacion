@@ -90,7 +90,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
     
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and nomenclatura like '%LP%' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and nomenclatura like '%LP%' and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -109,7 +109,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%LT%' or nomenclatura like 'LICENCIATURA') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%LT%' or nomenclatura like 'LICENCIATURA') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -126,7 +126,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%ET%') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%ET%') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -143,7 +143,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%MS%') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%MS%') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -160,7 +160,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%MG%')  and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%MG%') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -177,7 +177,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%DS%') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%DS%') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -194,7 +194,7 @@ EOF;
     $contadorHombre_Asignatura = 0;
     $contadorMujer_Asignatura = 0;
     
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%DG%') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%DG%') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -211,7 +211,7 @@ EOF;
     $contadorHombre_Asignatura = 0;
     $contadorMujer_Asignatura = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like '%TT%' or nomenclatura like '( C ) CERTIFICADO' or nomenclatura like '%TP%' or nomenclatura like '') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'federal'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like '%TT%' or nomenclatura like '( C ) CERTIFICADO' or nomenclatura like '%TP%' or nomenclatura like '') and tipo = 'federal'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -299,7 +299,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like 'LP') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo = 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like 'LP') and tipo = 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -318,7 +318,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like 'LT' or nomenclatura like '') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like 'LT' or nomenclatura like '') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -335,7 +335,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and nomenclatura like 'ET' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and nomenclatura like 'ET' and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -352,7 +352,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and nomenclatura like 'MS' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and nomenclatura like 'MS' and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
     
@@ -369,7 +369,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like 'MG') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like 'MG') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -386,7 +386,7 @@ EOF;
     $contadorHombre_Asignatura      = 0;
     $contadorMujer_Asignatura       = 0;
 
-    $consulta= "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and nomenclatura like 'DS' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta= "select * from $BDSeleccionada where docente_distancia = 'si' and nomenclatura like 'DS' and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -403,7 +403,7 @@ EOF;
     $contadorHombre_Asignatura = 0;
     $contadorMujer_Asignatura = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and nomenclatura like 'DG' and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and nomenclatura like 'DG' and tipo like 'estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
@@ -420,7 +420,7 @@ EOF;
     $contadorHombre_Asignatura = 0;
     $contadorMujer_Asignatura = 0;
 
-    $consulta = "select * from $BDSeleccionada where depto_adscripcion = 'EDUCACION A DISTANCIA' and (nomenclatura like 'TT' or nomenclatura like 'C' or nomenclatura like 'TP' or nomenclatura like 'P' or nomenclatura like '-') and (puesto like '%docent%' or puesto like 'DOCNETE' or esp_docente = 'si') and (tipo like 'estatal') and observaciones not like '%dualidad de plaza%'";
+    $consulta = "select * from $BDSeleccionada where docente_distancia = 'si' and (nomenclatura like 'TT' or nomenclatura like 'C' or nomenclatura like 'TP' or nomenclatura like 'P' or nomenclatura like '-') and (tipo like 'estatal') and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto, $contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo, $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
 
