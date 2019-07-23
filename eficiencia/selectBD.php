@@ -114,7 +114,7 @@ EOF;
 EOF;
                                     echo $seleccion;
                                     print <<<EOF
-
+                                    >
                                 </div>
                                 <div align = "left">
                                     </br>
