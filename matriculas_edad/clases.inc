@@ -268,6 +268,7 @@
                             FROM $tabla 
                             WHERE periodo = '$BDSeleccionada' and tipo = '$tipo' and semestre = '$semestre'
                             GROUP BY carrera, abierta, distancia, vespertino";
+
                 }  // FIN analisis si reporte es por periodo escolar o por semestre
 
             }   // FIN Semestre en especifio

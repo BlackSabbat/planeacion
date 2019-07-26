@@ -16,7 +16,7 @@
     $BDSeleccionada = $_POST["nombreBD"];
     $semestre       = trim($_POST["semestre"]);
     $anio_reporte   = substr($_POST["nombreBD"],10,12);
-    $swPerEsc       = $_POST["periodo_escolar"];
+    $swPerEsc       = trim($_POST["periodo_escolar"]);
 
     $seleccion      = trim($_POST["seleccion"]);
     $carrera        = trim($_POST["carreras"]);
@@ -57,6 +57,8 @@
     else{
     	$tabla2 = trim($_POST["tabla2"]);
     }
+
+
 
     print <<<EOF
         <div id="mainContent">
@@ -153,6 +155,13 @@ EOF;
                                     print <<<EOF
                                 ">
 
+                                <input type="hidden" name="seleccion" value="
+EOF;
+
+                                    echo "$seleccion";
+                                    print <<<EOF
+                                ">
+
                                 <tr>
                                     <td>
                                         &nbsp;
@@ -219,6 +228,13 @@ EOF;
                                 <input type="hidden" name="semestre" value="
 EOF;
                                     echo "$semestre";
+                                    print <<<EOF
+                                ">
+
+                                <input type="hidden" name="seleccion" value="
+EOF;
+
+                                    echo "$seleccion";
                                     print <<<EOF
                                 ">
 
@@ -303,6 +319,13 @@ EOF;
                                         <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
                                     </td>
                                 </tr>
+                                
+                                <input type="hidden" name="seleccion" value="
+EOF;
+
+                                    echo "$seleccion";
+                                    print <<<EOF
+                                ">
 
                                 <tr>
                                     <td>
@@ -369,8 +392,12 @@ EOF;
                                         echo $_POST["nombreBD"];
                                         print <<<EOF
                                     ">
-    
-                                    
+
+                                    <input type="hidden" name="seleccion" value="
+EOF;
+                                    echo "$seleccion";
+                                    print <<<EOF
+                                ">
 EOF;
                                 //}
 
