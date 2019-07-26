@@ -21,7 +21,7 @@
             <div id="sidebar">
                 <h3>&nbsp;&nbsp;Menu</h3>
                 <ul>
-                    <li><a href="matriculas_edad/selectBD.php">Seleccionar Base de Datos</a></li>
+                    <!-- <li><a href="matriculas_edad/selectBD.php">Seleccionar Base de Datos</a></li> -->
                     <br>&nbsp
                     <br>&nbsp
                     <br>&nbsp
@@ -33,7 +33,30 @@
             </div> <!-- end sidebar -->
             <div id="content">
                 <p>Matrículas por Edades en Semestres.</p>
-                <p>Favor de seleccionar un periodo para la Base de Datos.</p>
+                <p>Seleccionar tipo de reporte:</p>
+
+                <form method = "POST" action="matriculas_edad/selectBD.php">
+                    
+                        <div>
+                            
+                            <input type="radio" name="seleccion" value="semestre" checked>
+                            <label for="tabla1">por Semestre</label></br>
+                            <input type="radio" name="seleccion" value="anio">
+                            <label for="tabla2">por Año</label></br>
+
+                            <!--
+                            <input type="checkbox" name="seleccion" value="anio">
+                            <label for "seleccion">por Año</label>
+                            -->
+
+                            </br>
+                        </div>
+                        <div align = "left">
+                            <input id="submit" type="submit" name="submit" value="Aplicar">
+                        </div>
+                    
+                </form>
+
             </div> <!-- end content -->
         </div> <!-- end main content -->
 EOF;

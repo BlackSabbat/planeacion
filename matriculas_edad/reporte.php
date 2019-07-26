@@ -14,7 +14,28 @@
     $hora = date("h:i:sa");
 
     $BDSeleccionada = $_POST["nombreBD"];
-    $semestre = trim($_POST["semestre"]);
+    $semestre       = trim($_POST["semestre"]);
+    $anio_reporte   = substr($_POST["nombreBD"],10,12);
+    $swPerEsc       = $_POST["periodo_escolar"];
+
+    $seleccion      = trim($_POST["seleccion"]);
+    $carrera        = trim($_POST["carreras"]);
+    $reporte        = trim($_POST["reporte"]);
+    $tipo_carrera   = trim($_POST["tipo_carrera"]);
+    
+    if ($reporte != 'todas_carreras')
+    {
+        $reporte = $carrera;
+        if ($tipo_carrera == '2'){
+            $reporte = $reporte . " ABIERTA";
+        }
+        if ($tipo_carrera == '3'){
+            $reporte = $reporte . " DIST.";
+        }
+        if ($tipo_carrera == '4'){
+            $reporte = $reporte . " VESP.";
+        }
+    }
 
     $reingreso = ($_POST["reingreso"]);
     if ($reingreso == 1){
@@ -24,25 +45,18 @@
         $semestre = "sem todos";
     }
 
-
     if ($_POST["tabla1"] == '')
     	$tabla1 = '';
     else{
-    	$tabla1 = $_POST["tabla1"];
+    	$tabla1 = trim($_POST["tabla1"]);
     }
 
     if ($_POST["tabla2"] == ''){
 	    $tabla2 = '';
-	    echo "entro tabla2</br>";
 	}
     else{
-    	$tabla2 = $_POST["tabla2"];
+    	$tabla2 = trim($_POST["tabla2"]);
     }
-
-
-    $anio_reporte = substr($_POST["nombreBD"],10,12);
-
-    $swPerEsc      = $_POST["periodo_escolar"];
 
     print <<<EOF
         <div id="mainContent">
@@ -85,220 +99,284 @@
                     <div id="content">
                     <form method = "POST" action="reporte.php">
 EOF;
-                        if (($tabla1 =='licenciatura') && ($tabla2 == 'posgrado')) {
+                        // Reporte es por Semestre
+                        if ($seleccion  == 'semestre')
+                        {
 
-                            if ($swPerEsc == "1") {
-                                // Encabezado
-                                $mes_bd_1  = substr($BDSeleccionada,0,8);
-                                $anio_bd_1 = substr($BDSeleccionada,8,4);
+                            if (($tabla1 =='licenciatura') && ($tabla2 == 'posgrado')) {
 
-                                if ($mes_bd_1 == 'ene_jun_'){
-                                    $mes_bd_2  = 'ago_dic_';
-                                    $anio_bd_2 = $anio_bd_1 - 1;
-                                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+                                if ($swPerEsc == "1") {
+                                    // Encabezado
+                                    $mes_bd_1  = substr($BDSeleccionada,0,8);
+                                    $anio_bd_1 = substr($BDSeleccionada,8,4);
 
-                                    echo "<tr><td>Matrícula por edades de $semestre, en periodo: $periodo2 - $BDSeleccionada</td></td>";
+                                    if ($mes_bd_1 == 'ene_jun_'){
+                                        $mes_bd_2  = 'ago_dic_';
+                                        $anio_bd_2 = $anio_bd_1 - 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+
+                                        echo "<tr><td>Matrícula por edades de $semestre, en periodo: $periodo2 - $BDSeleccionada</td></td>";
+                                    }
+                                    else {
+                                        $mes_bd_2  = 'ene_jun_';
+                                        $anio_bd_2 = $anio_bd_1 + 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+
+                                        echo "<tr><td>Matrícula por edades de $semestre, en periodo: $BDSeleccionada - $periodo2</td></td>";
+                                    }
                                 }
-                                else {
-                                    $mes_bd_2  = 'ene_jun_';
-                                    $anio_bd_2 = $anio_bd_1 + 1;
-                                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+                                else
+                                    echo "<tr><td>Matrícula por edades de $semestre, en Semestre: $BDSeleccionada</td></tr>";
 
-                                    echo "<tr><td>Matrícula por edades de $semestre, en periodo: $BDSeleccionada - $periodo2</td></td>";
-                                }
+                                echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora <tr><td>";
+                                print <<< EOF
+                                <tr>
+                                    <td>
+EOF;
+                                        include ("reporte1.php");
+                                        print <<< EOF
+                                    </td>
+                                </tr>
+
+                                <input type="hidden" name="tabla1" value="licenciatura">
+                                <input type="hidden" name="tabla2" value="posgrado">
+                                <input type="hidden" name="nombreBD" value="
+EOF;
+                                    echo $_POST["nombreBD"];
+                                    print <<<EOF
+                                ">
+
+                                <input type="hidden" name="semestre" value="
+EOF;
+
+                                    echo "$semestre";
+                                    print <<<EOF
+                                ">
+
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input id="submit" type="submit" name="submit" value="Aplicar">
+                                    </td>
+                                </tr>
+EOF;
                             }
-                            else
-                                echo "<tr><td>Matrícula por edades de $semestre, en Semestre: $BDSeleccionada</td></tr>";
 
-                            echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora <tr><td>";
-                            print <<< EOF
-                            <tr>
-                                <td>
-EOF;
-                                    include ("reporte1.php");
-                                    print <<< EOF
-                                </td>
-                            </tr>
+                            if (($tabla1=='licenciatura') && ($tabla2 == '')){
 
-                            <input type="hidden" name="tabla1" value="licenciatura">
-                            <input type="hidden" name="tabla2" value="posgrado">
-                            <input type="hidden" name="nombreBD" value="
-EOF;
-                                echo $_POST["nombreBD"];
-                                print <<<EOF
-                            ">
+                                if ($swPerEsc == "1") {
+                                    // Encabezado
+                                    $mes_bd_1  = substr($BDSeleccionada,0,8);
+                                    $anio_bd_1 = substr($BDSeleccionada,8,4);
 
-                            <input type="hidden" name="semestre" value="
-EOF;
+                                    if ($mes_bd_1 == 'ene_jun_'){
+                                        $mes_bd_2  = 'ago_dic_';
+                                        $anio_bd_2 = $anio_bd_1 - 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                echo "$semestre";
-                                print <<<EOF
-                            ">
+                                        echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $periodo2 - $BDSeleccionada</td></td>";
+                                    }
+                                    else {
+                                        $mes_bd_2  = 'ene_jun_';
+                                        $anio_bd_2 = $anio_bd_1 + 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                            <tr>
-                                <td>
-                                    &nbsp;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <input id="submit" type="submit" name="submit" value="Aplicar">
-                                </td>
-                            </tr>
-EOF;
-                        }
-
-                        if (($tabla1=='licenciatura') && ($tabla2 == '')){
-
-                            if ($swPerEsc == "1") {
-                                // Encabezado
-                                $mes_bd_1  = substr($BDSeleccionada,0,8);
-                                $anio_bd_1 = substr($BDSeleccionada,8,4);
-
-                                if ($mes_bd_1 == 'ene_jun_'){
-                                    $mes_bd_2  = 'ago_dic_';
-                                    $anio_bd_2 = $anio_bd_1 - 1;
-                                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
-
-                                    echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $periodo2 - $BDSeleccionada</td></td>";
+                                     echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $BDSeleccionada - $periodo2</td></td>";
+                                    }
                                 }
-                                else {
-                                    $mes_bd_2  = 'ene_jun_';
-                                    $anio_bd_2 = $anio_bd_1 + 1;
-                                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+                                else
+                                    echo "<tr><td>Matrícula por Edades de $semestre, en Semestre: $BDSeleccionada</td></tr>";
 
-                                    echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $BDSeleccionada - $periodo2</td></td>";
-                                }
+                                echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora </td></tr>";
+                                print <<< EOF
+                                <tr>
+                                    <td>
+EOF;
+                                        include ("reporte2.php");
+                                        print <<< EOF
+                                    </td>
+                                </tr>
+
+                                <input type="hidden" name="tabla1" value="licenciatura">
+                                <input type="hidden" name="tabla2" value="">
+                                <input type="hidden" name="nombreBD" value="
+EOF;
+                                    echo $_POST["nombreBD"];
+                                    print <<<EOF
+                                ">
+
+                                <input type="hidden" name="semestre" value="
+EOF;
+                                    echo "$semestre";
+                                    print <<<EOF
+                                ">
+
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input id="submit" type="submit" name="submit" value="Aplicar">
+                                    </td>
+                                </tr>
+EOF;
                             }
-                            else
-                                echo "<tr><td>Matrícula por Edades de $semestre, en Semestre: $BDSeleccionada</td></tr>";
 
-                            echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora </td></tr>";
-                            print <<< EOF
-                            <tr>
-                                <td>
-EOF;
-                                    include ("reporte2.php");
-                                    print <<< EOF
-                                </td>
-                            </tr>
+                            if (($tabla1=='') && ($tabla2 == 'posgrado')){
 
-                            <input type="hidden" name="tabla1" value="licenciatura">
-                            <input type="hidden" name="tabla2" value="">
-                            <input type="hidden" name="nombreBD" value="
-EOF;
-                                echo $_POST["nombreBD"];
-                                print <<<EOF
-                            ">
+                                if ($swPerEsc == "1") {
+                                    // Encabezado
+                                    $mes_bd_1  = substr($BDSeleccionada,0,8);
+                                    $anio_bd_1 = substr($BDSeleccionada,8,4);
 
-                            <input type="hidden" name="semestre" value="
-EOF;
-                                echo "$semestre";
-                                print <<<EOF
-                            ">
+                                    if ($mes_bd_1 == 'ene_jun_'){
+                                        $mes_bd_2  = 'ago_dic_';
+                                        $anio_bd_2 = $anio_bd_1 - 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                            <tr>
-                                <td>
-                                    &nbsp;
-                                </td>
-                            </tr>
+                                        echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $periodo2 - $BDSeleccionada</td></td>";
+                                    }
+                                    else {
+                                        $mes_bd_2  = 'ene_jun_';
+                                        $anio_bd_2 = $anio_bd_1 + 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <input id="submit" type="submit" name="submit" value="Aplicar">
-                                </td>
-                            </tr>
-EOF;
-                        }
-
-                        if (($tabla1=='') && ($tabla2 == 'posgrado')){
-
-                            if ($swPerEsc == "1") {
-                                // Encabezado
-                                $mes_bd_1  = substr($BDSeleccionada,0,8);
-                                $anio_bd_1 = substr($BDSeleccionada,8,4);
-
-                                if ($mes_bd_1 == 'ene_jun_'){
-                                    $mes_bd_2  = 'ago_dic_';
-                                    $anio_bd_2 = $anio_bd_1 - 1;
-                                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
-
-                                    echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $periodo2 - $BDSeleccionada</td></td>";
+                                        echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $BDSeleccionada - $periodo2</td></td>";
+                                    }
                                 }
-                                else {
-                                    $mes_bd_2  = 'ene_jun_';
-                                    $anio_bd_2 = $anio_bd_1 + 1;
-                                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+                                else
+                                    echo "<tr><td>Matrícula por Edades de $semestre, en Semestre: $BDSeleccionada</td></tr>";
 
-                                    echo "<tr><td>Matrícula por Edades de $semestre, en periodo: $BDSeleccionada - $periodo2</td></td>";
-                                }
+                                echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora </td></tr>";
+                                print <<< EOF
+                                <tr>
+                                    <td>
+EOF;
+                                        include ("reporte3.php");
+                                        print <<< EOF
+                                    </td>
+                                </tr>
+
+                                <input type="hidden" name="tabla1" value="">
+                                <input type="hidden" name="tabla2" value="posgrado">
+                                <input type="hidden" name="nombreBD" value="
+EOF;
+                                    echo $_POST["nombreBD"];
+                                    print <<<EOF
+                                ">
+
+                                <input type="hidden" name="semestre" value="
+EOF;
+
+                                    echo "$semestre";
+                                    print <<<EOF
+                                ">
+
+                                <tr>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <input id="submit" type="submit" name="submit" value="Aplicar">
+                                    </td>
+                                </tr>
+EOF;
+
                             }
-                            else
-                                echo "<tr><td>Matrícula por Edades de $semestre, en Semestre: $BDSeleccionada</td></tr>";
 
-                            echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora </td></tr>";
-                            print <<< EOF
-                            <tr>
-                                <td>
-EOF;
-                                    include ("reporte3.php");
+                            if (($tabla1=='') && ($tabla2 == '')) {
+                                echo "<tr><td>No hay reporte seleccionado en $BDSeleccionada </td></tr>";
+                            }
+
+                        }  // FIN If reporte por semestre
+
+
+                        // REPORTE POR AÑO
+                        if ($seleccion  == 'anio')
+                        {
+                            // validar que la carrera exista
+                            if (($carrera != 'ING INDUSTRIAL' and $carrera != 'ING GESTION EMPR.' and $reporte != 'todas_carreras') and ($tipo_carrera == "2" or $tipo_carrera == "3" or $tipo_carrera == "4")) {
+                                    echo "<tr><td>No existe carrera $reporte en $BDSeleccionada</td></td>";
+                            }
+                            else if ($carrera == 'ING GESTION EMPR.' and ($tipo_carrera == "2" or $tipo_carrera == "4")) {
+                                    echo "<tr><td>No existe carrera $reporte en $BDSeleccionada</td></td>";
+                            }
+                            else {
+                                
+                                //if (($tabla1 == 'licenciatura') && ($tabla2 == 'posgrado')) {
+
+                                    $mes_bd_1  = substr($BDSeleccionada,0,8);
+                                    $anio_bd_1 = substr($BDSeleccionada,8,4);
+    
+                                    if ($mes_bd_1 == 'ene_jun_'){
+                                        $mes_bd_2  = 'ago_dic_';
+                                        $anio_bd_2 = $anio_bd_1 - 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+    
+                                        echo "<tr><td>Matrícula por edades de $reporte en $periodo2 - $BDSeleccionada</td></td>";
+                                    }
+                                    else {
+                                        $mes_bd_2  = 'ene_jun_';
+                                        $anio_bd_2 = $anio_bd_1 + 1;
+                                        $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+    
+                                        echo "<tr><td>Matrícula por edades de $reporte en $BDSeleccionada - $periodo2</td></td>";
+                                    }
+    
+                                    echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora <tr><td>";
                                     print <<< EOF
-                                </td>
-                            </tr>
-
-                            <input type="hidden" name="tabla1" value="">
-                            <input type="hidden" name="tabla2" value="posgrado">
-                            <input type="hidden" name="nombreBD" value="
+                                    <tr>
+                                        <td>
 EOF;
-                                echo $_POST["nombreBD"];
-                                print <<<EOF
-                            ">
-
-                            <input type="hidden" name="semestre" value="
+                                            include ("reporte4.php");
+                                            print <<< EOF
+                                        </td>
+                                    </tr>
+    
+                                    <input type="hidden" name="tabla1" value="licenciatura">
+                                    <input type="hidden" name="tabla2" value="posgrado">
+                                    <input type="hidden" name="nombreBD" value="
 EOF;
-
-                                echo "$semestre";
-                                print <<<EOF
-                            ">
-
-                            <tr>
-                                <td>
-                                    &nbsp;
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="periodo_escolar" value="1">&nbsp; Reporte por periodo escolar
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <input id="submit" type="submit" name="submit" value="Aplicar">
-                                </td>
-                            </tr>
+                                        echo $_POST["nombreBD"];
+                                        print <<<EOF
+                                    ">
+    
+                                    
 EOF;
+                                //}
 
-                        }
-
-                        if (($tabla1=='') && ($tabla2 == '')) {
-                            echo "<tr><td>No hay reporte seleccionado en $BDSeleccionada </td></tr>";
-                        }
-
+                            } //Else validacion si la carrera existe
+                            
+                        }  // FIN If reporte por Año
                         print <<< EOF
                     </form>
                     </div> <!-- end content -->

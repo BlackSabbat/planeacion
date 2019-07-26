@@ -27,7 +27,12 @@ EOF;
         # Establacer conexion
         $db = new mysqli($host, $user, $pwd, $base_datos);
 
-        $myMatricula -> reporte1($BDSeleccionada, $tabla, $tipo, $semestre, $db, $host, $user, $pwd, $swPerEsc);
+        // Reporte es por Semestre
+        //f ($seleccion  == 'semestre')
+            $myMatricula -> reporte1($BDSeleccionada, $tabla, $tipo, $semestre, $db, $host, $user, $pwd, $swPerEsc);
+
+        //if ($seleccion  == 'anio')
+        //    $myMatricula -> reporte2($BDSeleccionada, $tabla, $tipo, $carrera, $reporte, $db, $host, $user, $pwd, $tipo_carrera);
 
     # Termina Tabla de Licenciaturas
         print <<<EOF
@@ -56,8 +61,11 @@ EOF;
 
         # Establacer conexion
         $db = new mysqli($host, $user, $pwd, $base_datos);
- 
-        $myMatricula -> reporte1($BDSeleccionada, $tabla, $tipo, $semestre,$db, $host, $user, $pwd, $swPerEsc);
+
+        // Reporte es por Semestre
+        //if ($seleccion  == 'semestre')
+            $myMatricula -> reporte1($BDSeleccionada, $tabla, $tipo, $semestre,$db, $host, $user, $pwd, $swPerEsc);
+
 
     # Termina Tabla de Posgrado
     
