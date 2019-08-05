@@ -14,9 +14,6 @@
     $tabla2 = $_POST["tabla2"];
     $anio_reporte = substr($_POST["nombreBD"],10,12);
 
-    if ($_POST["periodo_escolar"] == '')
-        echo ("entra </br>");
-
     $swPerEsc      = $_POST["periodo_escolar"];
     
     print <<<EOF
