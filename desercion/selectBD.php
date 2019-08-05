@@ -52,7 +52,7 @@ EOF;
                                         <select name = "nombreBD">
 
 EOF;
-                                            $query = "select distinctrow(periodo) from titulados";
+                                            $query = "select distinctrow(periodo) from matriculas_semestre";
                                             $result = $db->query($query);
                                             
                                             while( $row = $result->fetch_array()) {
@@ -78,6 +78,7 @@ EOF;
                                         print <<<EOF
 
                                     </div>
+                                    </p>
                                     <div align = "left">
                                         <input id="submit" type="submit" name="submit" value="Aplicar">
                                     </div>

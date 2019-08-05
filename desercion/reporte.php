@@ -1,7 +1,7 @@
 <?php
     #-----------------------------------------------------------------------------
     # programador: ing. Jose Ruben de la Peña Fuentes
-    # objetivo: crear reporte "Índice de Reprobación"
+    # objetivo: crear reporte "Índice de Descerción"
     #-----------------------------------------------------------------------------
     
     require_once($_SERVER["DOCUMENT_ROOT"]."/classPage.php");
@@ -41,7 +41,7 @@
                         <ul>
                         <table>
                             <tr>
-                                <a href="../reprobados.php");>Seleccionar Reporte </a></br>
+                                <a href="../desercion.php");>Seleccionar Reporte </a></br>
                             </tr>
 
                             </br>&nbsp
@@ -103,7 +103,7 @@ EOF;
 
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" name="esconder" value="1">&nbsp; esconder campos adicionales
+                                                    <input type="checkbox" name="esconder" value="1">&nbsp; mostrar solamente índice de deserción
                                                 </td>
                                             </tr>
 
