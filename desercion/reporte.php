@@ -167,7 +167,7 @@ EOF;
 
                                             <tr>
                                                 <td>
-                                                    <input type="checkbox" name="esconder" value="1">&nbsp; esconder campos adicionales
+                                                    <input type="checkbox" name="esconder" value="1">&nbsp; mostrar solamente índice de deserción
                                                 </td>
                                             </tr>
 
