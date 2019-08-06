@@ -88,9 +88,9 @@ EOF;
                                         <legend>Reportes Generales</legend>
                                         <div>
                                             <input type="radio" name="reporte" value="reporte1">
-                                            <label for="reporte1">Reprobados en el Semestre</label></br>
+                                            <label for="reporte1">Deserciones en el Semestre</label></br>
                                             <input type="radio" name="reporte" value="reporte2">
-                                            <label for="reporte2">Reprobados por Ciclo Escolar</label></br>
+                                            <label for="reporte2">Deserciones por Ciclo Escolar</label></br>
 
                                             <input type="hidden" name="nombreBD" value="
 EOF;
