@@ -182,7 +182,7 @@
         }
 
 
-        function reporteResidencias1($swPrintHeadings, $consulta, $rubro, $myResidencia, $db, $host, $user, $pwd)
+        function reporteResidencias1($swPrintHeadings, $myResidencia, $BDSeleccionada, $db, $host, $user, $pwd, $base_datos)
         {
             global $contGrande_Priv_Hombre;
             global $contGrande_Priv_Mujer;
@@ -219,43 +219,100 @@
             
             //echo ("switch: $swPrintHeadings query: $consulta rubro: $rubro");
 
+            $consulta = "select distinct carrera from $BDSeleccionada group by carrera";
+
             # Consulta por carrera
             $query = $consulta;
             $result = $db->query($query);
+            //echo "$query </br>";
 
-           # Armar el reporte
+           # Ciclo para recorrer las carreras
            while( $row = $result->fetch_assoc()) {
-                //echo "Num Control: $row[num_control] nombre: $row[nombre] sexo: $row[sexo] </br>";
-                $empresa = trim($row['empresa']);
-                $sexo = $row['sexo'];
 
-                #Obtener Empresa, Tipo y Sector
-                if ($empresa != '')
-                {
-                    $db2 = new mysqli($host, $user, $pwd, "base_datos_comun");
-                    $query2 = "select distinct nombre, tipo, sector from empresas where nombre = '$empresa'";
-                    $result2 = $db2->query($query2);
-                    if ($result2->num_rows == 0)
+                $contGrande_Priv_Hombre     = 0;
+                $contGrande_Priv_Mujer      = 0;
+                $contGrande_Pub_Hombre      = 0;
+                $contGrande_Pub_Mujer       = 0;
+                $contGrande_EduPub_Hombre   = 0;
+                $contGrande_EduPub_Mujer    = 0;
+                $contGrande_EduPriv_Hombre  = 0;
+                $contGrande_EduPriv_Mujer   = 0;
+                $contMediana_Priv_Hombre    = 0;
+                $contMediana_Priv_Mujer     = 0;
+                $contMediana_Pub_Hombre     = 0;
+                $contMediana_Pub_Mujer      = 0;
+                $contMediana_EduPub_Hombre  = 0;
+                $contMediana_EduPub_Mujer   = 0;
+                $contMediana_EduPriv_Hombre = 0;
+                $contMediana_EduPriv_Mujer  = 0;
+                $contPequena_Priv_Hombre    = 0;
+                $contPequena_Priv_Mujer     = 0;
+                $contPequena_Pub_Hombre     = 0;
+                $contPequena_Pub_Mujer      = 0;
+                $contPequena_EduPub_Hombre  = 0;
+                $contPequena_EduPub_Mujer   = 0;
+                $contPequena_EduPriv_Hombre = 0;
+                $contPequena_EduPriv_Mujer  = 0;
+                $contMicro_Priv_Hombre      = 0;
+                $contMicro_Priv_Mujer       = 0;
+                $contMicro_Pub_Hombre       = 0;
+                $contMicro_Pub_Mujer        = 0;
+                $contMicro_EduPub_Hombre    = 0;
+                $contMicro_EduPub_Mujer     = 0;
+                $contMicro_EduPriv_Hombre   = 0;
+                $contMicro_EduPriv_Mujer    = 0;
+
+                //echo "Num Control: $row[num_control] nombre: $row[nombre] sexo: $row[sexo] </br>";
+                $rubro = trim($row[carrera]);
+
+                // Consulta por cada carrera
+                $consulta_carrera = "SELECT distinct carrera, num_control, nombre, sexo, telefono, correo, empresa, nombre_proyecto, asesor_interno, fecha_inicio, fecha_termino FROM $BDSeleccionada where carrera = '$rubro' GROUP BY carrera, id";
+                
+                // Ejecutar consulta
+                $query_carrera = $consulta_carrera;
+                $result_carrera = $db->query($query_carrera);
+                //echo "$query_carrera </br>";
+
+                //Ciclo del Detalle del Reporte
+                while($row_carrera = $result_carrera->fetch_assoc()) {
+
+                    $empresa = trim($row_carrera[empresa]);
+                    $sexo = $row_carrera[sexo];
+
+                    #Obtener Empresa, Tipo y Sector
+                    if ($empresa != '')
                     {
-                        echo ("NumControl: $row[num_control] $empresa no encontrada </br>");
+                        $db2 = new mysqli($host, $user, $pwd, $base_datos);
+                        $query2 = "select distinct nombre, tipo, sector from empresas where nombre = '$empresa'";
+                        $result2 = $db2->query($query2);
+                        
+                        if ($result2->num_rows == 0)
+                        {
+                            echo ("NumControl: $row[num_control] $empresa no encontrada </br>");
+                        }
+                        else
+                        {
+                            $row2 = $result2->fetch_assoc();
+                            $tipo = $row2[tipo];
+                            $sector = $row2[sector];
+                            //echo "tipo: $tipo sector:$sector sexo:$sexo </br>";
+
+                            $myResidencia -> armarReporte($tipo, $sector, $sexo);
+                        }
                     }
                     else
                     {
-                        $row2 = $result2->fetch_assoc();
-                        $tipo = $row2['tipo'];
-                        $sector = $row2['sector'];
-                        
-                        $myResidencia -> armarReporte($tipo, $sector, $sexo);
-
+                        echo ("REVISAR registro con Num Control: $row[num_control] con empresa NULL</br>"); 
                     }
-                }
-                else
-                {
-                    echo ("REVISAR registro con Num Control: $row[num_control] con empresa NULL</br>"); 
-                }
-            }
 
-            $myResidencia -> imprimirReporte1($rubro, $contGrande_Priv_Hombre, $contGrande_Priv_Mujer,  $contGrande_Pub_Hombre, $contGrande_Pub_Mujer, $contGrande_EduPub_Hombre, $contGrande_EduPub_Mujer, $contGrande_EduPriv_Hombre, $contGrande_EduPriv_Mujer,$contMediana_Priv_Hombre, $contMediana_Priv_Mujer, $contMediana_Pub_Hombre, $contMediana_Pub_Mujer, $contMediana_EduPub_Hombre, $contMediana_EduPub_Mujer, $contMediana_EduPriv_Hombre, $contMediana_EduPriv_Mujer, $contPequena_Priv_Hombre, $contPequena_Priv_Mujer, $contPequena_Pub_Hombre, $contPequena_Pub_Mujer, $contPequena_EduPub_Hombre, $contPequena_EduPub_Mujer, $contPequena_EduPriv_Hombre, $contPequena_EduPriv_Mujer, $contMicro_Priv_Hombre, $contMicro_Priv_Mujer, $contMicro_Pub_Hombre, $contMicro_Pub_Mujer, $contMicro_EduPub_Hombre, $contMicro_EduPub_Mujer, $contMicro_EduPriv_Hombre, $contMicro_EduPriv_Mujer,$swPrintHeadings);
+                } // while por cada carrera
+
+                $myResidencia -> imprimirReporte1($rubro, $contGrande_Priv_Hombre, $contGrande_Priv_Mujer,  $contGrande_Pub_Hombre, $contGrande_Pub_Mujer, $contGrande_EduPub_Hombre, $contGrande_EduPub_Mujer, $contGrande_EduPriv_Hombre, $contGrande_EduPriv_Mujer,$contMediana_Priv_Hombre, $contMediana_Priv_Mujer, $contMediana_Pub_Hombre, $contMediana_Pub_Mujer, $contMediana_EduPub_Hombre, $contMediana_EduPub_Mujer, $contMediana_EduPriv_Hombre, $contMediana_EduPriv_Mujer, $contPequena_Priv_Hombre, $contPequena_Priv_Mujer, $contPequena_Pub_Hombre, $contPequena_Pub_Mujer, $contPequena_EduPub_Hombre, $contPequena_EduPub_Mujer, $contPequena_EduPriv_Hombre, $contPequena_EduPriv_Mujer, $contMicro_Priv_Hombre, $contMicro_Priv_Mujer, $contMicro_Pub_Hombre, $contMicro_Pub_Mujer, $contMicro_EduPub_Hombre, $contMicro_EduPub_Mujer, $contMicro_EduPriv_Hombre, $contMicro_EduPriv_Mujer,$swPrintHeadings);
+
+                $swPrintHeadings = 1;
+
+            } // While que recorre todas las carreras
+
         }
 
         
@@ -314,24 +371,12 @@
                     print <<<EOF
                     </br>
                     <tr>
-                        <th rowspan=3 id="encabezadoTabla">
-                            Carreras
-                        </th>
-                        <th colspan=8 id="encabezadoTabla">
-                            Grande
-                        </th>
-                        <th colspan=8 id="encabezadoTabla">
-                            Mediana
-                        </th>
-                        <th colspan=8 id="encabezadoTabla">
-                            Pequeña
-                        </th>
-                        <th colspan=8 id="encabezadoTabla">
-                            Micro
-                        </th>
-                        <th colspan=3 id="encabezadoTabla" rowspan=2>
-                            Total
-                        </th>
+                        <th rowspan=3 id="subEncabezado"> Carreras    </th>
+                        <th colspan=8 id="subEncabezado"> Grande      </th>
+                        <th colspan=8 id="subEncabezado"> Mediana     </th>
+                        <th colspan=8 id="subEncabezado"> Pequeña     </th>
+                        <th colspan=8 id="subEncabezado"> Micro       </th>
+                        <th colspan=3 id="subEncabezado" rowspan=2> Total </th>
                     </tr>
                     <tr>
                         <th colspan=2 id="subEncabezado" nowrap> Priv   </th>
@@ -352,84 +397,84 @@
                         <th colspan=2 id="subEncabezado" nowrap> E. Pri </th>
                     </tr>
                     <tr">
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">H</td>
-                        <td id="subEncabezado">M</td>
-                        <td id="subEncabezado">Tot</td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> H                       </td>
+                        <td id="subEncabezado"> M                       </td>
+                        <td id="subEncabezado"> Tot                     </td>
                     </tr>
 EOF;
             }
 
             print <<<EOF
         
-            <tr id="detalle">
-                <td id="rubro" nowrap>$rubro</td>
-                <td>$contGrande_Priv_Hombre</td>
-                <td>$contGrande_Priv_Mujer</td>
-                <td>$contGrande_Pub_Hombre</td>
-                <td>$contGrande_Pub_Mujer</td>
-                <td>$contGrande_EduPub_Hombre</td>
-                <td>$contGrande_EduPub_Mujer</td>
-                <td>$contGrande_EduPriv_Hombre</td>
-                <td>$contGrande_EduPriv_Mujer</td>
-                <td>$contMediana_Priv_Hombre</td>
-                <td>$contMediana_Priv_Mujer</td>
-                <td>$contMediana_Pub_Hombre</td>
-                <td>$contMediana_Pub_Mujer</td>
-                <td>$contMediana_EduPub_Hombre</td>
-                <td>$contMediana_EduPub_Mujer</td>
-                <td>$contMediana_EduPriv_Hombre</td>
-                <td>$contMediana_EduPriv_Mujer</td>
-                <td>$contPequena_Priv_Hombre</td>
-                <td>$contPequena_Priv_Mujer</td>
-                <td>$contPequena_Pub_Hombre</td>
-                <td>$contPequena_Pub_Mujer</td>
-                <td>$contPequena_EduPub_Hombre</td>
-                <td>$contPequena_EduPub_Mujer</td>
-                <td>$contPequena_EduPriv_Hombre</td>
-                <td>$contPequena_EduPriv_Mujer</td>
-                <td>$contMicro_Priv_Hombre</td>
-                <td>$contMicro_Priv_Mujer</td>
-                <td>$contMicro_Pub_Hombre</td>
-                <td>$contMicro_Pub_Mujer</td>
-                <td>$contMicro_EduPub_Hombre</td>
-                <td>$contMicro_EduPub_Mujer</td>
-                <td>$contMicro_EduPriv_Hombre</td>
-                <td>$contMicro_EduPriv_Mujer</td>
-                <td>$total_Hombre</td>
-                <td>$total_Mujer</td>
-                <td>$total_rubro</td>
+            <tr id="trChico">
+                <td id="DetalleChico">$rubro    </td>
+                <td id="DetalleChico">$contGrande_Priv_Hombre     </td>
+                <td id="DetalleChico">$contGrande_Priv_Mujer      </td>
+                <td id="DetalleChico">$contGrande_Pub_Hombre      </td>
+                <td id="DetalleChico">$contGrande_Pub_Mujer       </td>
+                <td id="DetalleChico">$contGrande_EduPub_Hombre   </td>
+                <td id="DetalleChico">$contGrande_EduPub_Mujer    </td>
+                <td id="DetalleChico">$contGrande_EduPriv_Hombre  </td>
+                <td id="DetalleChico">$contGrande_EduPriv_Mujer   </td>
+                <td id="DetalleChico">$contMediana_Priv_Hombre    </td>
+                <td id="DetalleChico">$contMediana_Priv_Mujer     </td>
+                <td id="DetalleChico">$contMediana_Pub_Hombre     </td>
+                <td id="DetalleChico">$contMediana_Pub_Mujer      </td>
+                <td id="DetalleChico">$contMediana_EduPub_Hombre  </td>
+                <td id="DetalleChico">$contMediana_EduPub_Mujer   </td>
+                <td id="DetalleChico">$contMediana_EduPriv_Hombre </td>
+                <td id="DetalleChico">$contMediana_EduPriv_Mujer  </td>
+                <td id="DetalleChico">$contPequena_Priv_Hombre    </td>
+                <td id="DetalleChico">$contPequena_Priv_Mujer     </td>
+                <td id="DetalleChico">$contPequena_Pub_Hombre     </td>
+                <td id="DetalleChico">$contPequena_Pub_Mujer      </td>
+                <td id="DetalleChico">$contPequena_EduPub_Hombre  </td>
+                <td id="DetalleChico">$contPequena_EduPub_Mujer   </td>
+                <td id="DetalleChico">$contPequena_EduPriv_Hombre </td>
+                <td id="DetalleChico">$contPequena_EduPriv_Mujer  </td>
+                <td id="DetalleChico">$contMicro_Priv_Hombre      </td>
+                <td id="DetalleChico">$contMicro_Priv_Mujer       </td>
+                <td id="DetalleChico">$contMicro_Pub_Hombre       </td>
+                <td id="DetalleChico">$contMicro_Pub_Mujer        </td>
+                <td id="DetalleChico">$contMicro_EduPub_Hombre    </td>
+                <td id="DetalleChico">$contMicro_EduPub_Mujer     </td>
+                <td id="DetalleChico">$contMicro_EduPriv_Hombre   </td>
+                <td id="DetalleChico">$contMicro_EduPriv_Mujer    </td>
+                <td id="DetalleChico">$total_Hombre               </td>
+                <td id="DetalleChico">$total_Mujer                </td>
+                <td id="DetalleChico">$total_rubro                </td>
             </tr>
             
 EOF;

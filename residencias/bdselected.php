@@ -42,7 +42,7 @@ EOF;
                         <br>&nbsp
                         <br>&nbsp
 
-                        <form method = "GET" action="reporte.php?nombreBD&reporte">
+                        <form method = "POST" action="reporte.php">
                             <fieldset>
                                 <legend>Selección de Reportes</legend>
                                 <div>

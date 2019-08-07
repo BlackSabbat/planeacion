@@ -4,12 +4,9 @@
     $page = new Page();
     print $page->getTop();
         
-    #$BDSeleccionada = $_POST["nombreBD"];
-    #$reporteNombre = $_POST["reporte"];
-    #$anio_reporte = substr($_POST["nombreBD"],10,4);
-    $BDSeleccionada = $_GET["nombreBD"];
-    $reporteNombre = $_GET["reporte"];
-    $anio_reporte = substr($_GET["nombreBD"],13,13);
+    $BDSeleccionada = $_POST["nombreBD"];
+    $reporteNombre = $_POST["reporte"];
+    $anio_reporte = substr($_POST["nombreBD"],12,13);
     
     print <<<EOF
         <div id="mainContent">
@@ -27,7 +24,7 @@
                          <ul>
                             <li><a href="selectBD.php" style='text-decoration:none;'>Base de Datos </a></br></li>
 EOF;
-                              echo "<li><a href='reporte.php?reporte=reporte1&nombreBD=$BDSeleccionada'style='text-decoration:none;'>Residencias en el Periodo</a></br></li>";
+                             
                   
  print <<<EOF
              
@@ -54,26 +51,18 @@ EOF;
                 <td align = "left">
                     <div id="content">
 EOF;
-                    if (($BDSeleccionada == "estadisticas_AgoDec_2017") or ($BDSeleccionada == "estadisticas_EneJun_2018"))
-                    {
+                    
                             switch ($reporteNombre)
                             {
                                 case "reporte2":
-                                    echo "Residencias en $anio_reporte";
+                                    echo "Residencias en $anio_reporte </br>";
                                     include ("reporte2.php");
                                     break;
 
                                 default:
                                     echo "No hay reporte seleccionado";
                             }
-                    }
-                    else
-                    {
-                        print <<< EOF
-                        <p>Base de Datos seleccionada no es válida</p>
-                        <p>¡ Por favor seleccionar otra !</p>
-EOF;
-                    }    
+                     
                     print <<< EOF
                 
                     </div> <!-- end content -->

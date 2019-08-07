@@ -1,7 +1,12 @@
 <?php
+
+    include ("mysql_conection.inc");
     require_once($_SERVER["DOCUMENT_ROOT"]."/classPage.php");
     $page = new Page();
     print $page->getTop();
+
+    # Establacer conexion
+    $db = new mysqli($host, $user, $pwd, $base_datos);
          
     print <<<EOF
         <div id="mainContent">
@@ -37,15 +42,40 @@
                                 <fieldset>
                                     <legend>Selección de Base de Datos</legend>
                                     <div>
-                                        <!--nombre: <input type="text" name="nombre"><br> -->
-                                        Año:
+                                        
                                         <select name = "nombreBD">
-                                            <option value="estadisticas_AgoDec_2017">2017 Ago-Dic</option>
-                                            <option value="estadisticas_EneJun_2018">2018 Ene-Jun</option>
-                                            <option value="estadisticas_AgoDec_2018">2019 Ago-Dic</option>
+EOF;
+
+                                            $query = "show tables like 'residencias%'";
+                                            $result = $db->query($query);
+                                                                            
+                                            while( $row = $result->fetch_array()) {
+                                                //echo "base de datos: $row[0] <br>";
+                                                print <<<EOF
+                                                <option value="
+EOF;
+
+
+                                                    echo ($row[0]);       
+                                                    print <<<EOF
+                                                    ">
+EOF;
+
+
+                                                    echo ($row[0]);
+                                                    print <<<EOF
+                                                      
+                                                </option>                                   
+EOF;
+
+
+                                            }
+                                            print <<<EOF
                                         </select>
+
                                     </div>
-                                    <div align = "center">
+                                    </br>
+                                    <div align = "left">
                                         <input id="submit" type="submit" name="submit" value="Aplicar">
                                     </div>
                                 </fieldset>
@@ -56,4 +86,7 @@
         </div> <!-- end main content -->
 EOF;
       print $page->getBottom();
+
+      # cerrar conexion a BD
+      $db->close();
 ?>
