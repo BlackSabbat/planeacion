@@ -438,11 +438,11 @@ EOF;
             # Armar el reporte de MATRICULAS (6 años)
             while( $row = $result_matriculas->fetch_assoc()) {
 
-                if ($row[hom1] != null)
+                if ($row['hom1'] != null)
                 {
-                    $hom_matricula = $row[hom1];
-                    $muj_matricula = $row[muj1];
-                }  //cierre de if ($row[hom1] != null)
+                    $hom_matricula = $row['hom1'];
+                    $muj_matricula = $row['muj1'];
+                }  //cierre de if ($row['hom1'] != null)
 
             }  //cierre while Matriculas
 
