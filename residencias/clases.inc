@@ -263,7 +263,7 @@
                 $contMicro_EduPriv_Mujer    = 0;
 
                 //echo "Num Control: $row[num_control] nombre: $row[nombre] sexo: $row[sexo] </br>";
-                $rubro = trim($row['carrera']);
+                $rubro = trim($row[carrera]);
 
                 // Consulta por cada carrera
                 $consulta_carrera = "SELECT distinct carrera, num_control, nombre, sexo, telefono, correo, empresa, nombre_proyecto, asesor_interno, fecha_inicio, fecha_termino FROM $BDSeleccionada where carrera = '$rubro' GROUP BY carrera, id";
