@@ -44,8 +44,6 @@ EOF;
 
     if ($reporte == 'todas_carreras') {
 
-EOF;
-
         # Inicia Tabla de Posgrado
         print <<<EOF
         <table>
