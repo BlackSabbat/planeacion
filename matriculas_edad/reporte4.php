@@ -79,7 +79,6 @@ EOF;
 
     } 
 
-EOF;
     # cerrar conexion a BD
     $db->close();
 ?>
