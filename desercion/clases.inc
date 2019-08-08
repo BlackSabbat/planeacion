@@ -240,9 +240,9 @@ EOF;
                 
                 while($row2 = $result2->fetch_assoc()) {
 
-                    //echo "$row2[alumno] </br>";
+                    //echo "$row2['alumno'] </br>";
             
-                    if ($row2[sexo] == 'M'){
+                    if ($row2['sexo'] == 'M'){
                         $hom_egr  =  $hom_egr + 1;
                     }
                     else {
@@ -340,8 +340,8 @@ EOF;
                 
                 while($row3 = $result3->fetch_assoc()) {
 
-                    $hom_reing = $row3[hom_reingreso];
-                    $muj_reing = $row3[muj_reingreso];
+                    $hom_reing = $row3['hom_reingreso'];
+                    $muj_reing = $row3['muj_reingreso'];
                 }
 
                 // Calculos
