@@ -1123,8 +1123,8 @@ EOF;
                 $long_num_control = strlen ($row['num_control']);
 
                 if ($long_num_control == 9){
-                    $num_control_cons = substr($row[num_control],-4);
-                    $num_control_anio = substr($row[num_control],1,2);
+                    $num_control_cons = substr($row['num_control'],-4);
+                    $num_control_anio = substr($row['num_control'],1,2);
                 }
                 if ($long_num_control == 8){
                     $num_control_cons = substr($row['num_control'],-4);
@@ -1176,8 +1176,8 @@ EOF;
                 $long_num_control = strlen ($row['num_control']);
 
                 if ($long_num_control == 9){
-                    $num_control_cons = substr($row[num_control],-4);
-                    $num_control_anio = substr($row[num_control],1,2);
+                    $num_control_cons = substr($row['num_control'],-4);
+                    $num_control_anio = substr($row['num_control'],1,2);
                 }
                 if ($long_num_control == 8){
                     $num_control_cons = substr($row['num_control'],-4);
