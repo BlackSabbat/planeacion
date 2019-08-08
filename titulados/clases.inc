@@ -138,7 +138,7 @@ EOF;
                 $total25 = 0; $total26 = 0; $total30 = 0;
 
             
-                $rubro = $row_consulta[carrera];
+                $rubro = $row_consulta['carrera'];
 
                 // Analizar si el reporte es por periodo escolar (ejem Ene-Jun 2017 Ago-Dic 20018)
                 // y definir consulta
@@ -177,7 +177,7 @@ EOF;
                 //Ciclo del Detalle del Reporte
                 while( $row = $result->fetch_assoc()) {
                 
-                    $rubro = $row[carrera];
+                    $rubro = $row['carrera'];
                     //echo "carrera:$row[carrera]</br>";
                     //echo "control: $row[num_control] edad: $row[edad] genero: $row[sexo] </br>";
                 
@@ -402,7 +402,7 @@ EOF;
                         }
                     
                     } #plan 2004
-EOF;       
+    
                 }  //cierre while del detalle
 
             //echo "carrera $rubro muj. >= 30 $muj30 </br>";
