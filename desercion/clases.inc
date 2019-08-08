@@ -179,19 +179,19 @@ EOF;
                 //definir CONSULTA DE Egresados de cada carrera
                 // Analizar si el reporte es por periodo escolar (ejem Ene-Jun 2017 a Ago-Dic 20018)
 
-                $carrera        =   $row1[carrera];
-                $hom_mat        =   $row1[hom];
-                $muj_mat        =   $row1[muj];
+                $carrera        =   $row1['carrera'];
+                $hom_mat        =   $row1['hom'];
+                $muj_mat        =   $row1['muj'];
 
-                if ($row1[abierta] == 'si') {
+                if ($row1['abierta'] == 'si') {
                     $carrera    = $carrera;
                 }
 
-                if ($row1[distancia] == 'si') {
+                if ($row1['distancia'] == 'si') {
                     $carrera    = $carrera . ' DIST';
                 }
 
-                if ($row1[vespertino] == 'si') {
+                if ($row1['vespertino'] == 'si') {
                     $carrera    = $carrera . ' VESP';
                 }
 
@@ -255,10 +255,10 @@ EOF;
                 //definir CONSULTA DE REINGRESOS de cada carrera
                 // por Periodo Escolar
 
-                $carrera2       =   $row1[carrera];
-                $abierta        =   $row1[abierta];
-                $distancia      =   $row1[distancia];
-                $vespertino     =   $row1[vespertino];
+                $carrera2       =   $row1['carrera'];
+                $abierta        =   $row1['abierta'];
+                $distancia      =   $row1['distancia'];
+                $vespertino     =   $row1['vespertino'];
 
                 if ($swPerEsc == "1") {
 
@@ -372,15 +372,15 @@ EOF;
                 // Tabla del reporte
                 $tabla_bajas = array(
 
-                        carrera              =>   $carrera,
-                        hom_mat              =>   $hom_mat,
-                        muj_mat              =>   $muj_mat,
+                        'carrera'              =>   $carrera,
+                        'hom_mat'              =>   $hom_mat,
+                        'muj_mat'              =>   $muj_mat,
 
-                        hom_egr              =>   $hom_egr,
-                        muj_egr              =>   $muj_egr,
+                        'hom_egr'              =>   $hom_egr,
+                        'muj_egr'              =>   $muj_egr,
 
-                        hom_reing            =>   $hom_reing,
-                        muj_reing            =>   $muj_reing
+                        'hom_reing'            =>   $hom_reing,
+                        'muj_reing'            =>   $muj_reing
 
                 ); 
 
