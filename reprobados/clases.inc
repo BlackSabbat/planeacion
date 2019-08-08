@@ -231,16 +231,16 @@ EOF;
                 // Tabla del reporte
                 $reprobados = array(
                     
-                        carrera              =>   $row1['carrera'],
-                        ninguna_rep          =>   $row1['ninguna_rep'],
-                        reprobadas_1         =>   $row1['reprobadas_1'],
-                        reprobadas_2         =>   $row1['reprobadas_2'],
-                        reprobadas_3         =>   $row1['reprobadas_3'],
-                        reprobadas_4         =>   $row1['reprobadas_4'],
-                        creditos_cursados    =>   $row1['creditos_cursados'],
-                        creditos_aprobados   =>   $row1['creditos_aprobados'],
-                        periodo              =>   $row1['periodo'],
-                        matricula            =>   $row2['mat']
+                        'carrera'              =>   $row1['carrera'],
+                        'ninguna_rep'          =>   $row1['ninguna_rep'],
+                        'reprobadas_1'         =>   $row1['reprobadas_1'],
+                        'reprobadas_2'         =>   $row1['reprobadas_2'],
+                        'reprobadas_3'         =>   $row1['reprobadas_3'],
+                        'reprobadas_4'         =>   $row1['reprobadas_4'],
+                        'creditos_cursados'    =>   $row1['creditos_cursados'],
+                        'creditos_aprobados'   =>   $row1['creditos_aprobados'],
+                        'periodo'              =>   $row1['periodo'],
+                        'matricula'            =>   $row2['mat']
 
                 );    
 
