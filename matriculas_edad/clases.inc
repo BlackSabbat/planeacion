@@ -1058,17 +1058,17 @@ EOF;
                     
                     if ($row['semestre'] == 'sem02' or $row['semestre'] == 'sem04' or $row['semestre'] == 'sem06' or $row['semestre'] == 'sem08' or $row['semestre'] == 'sem10' or $row['semestre'] == 'sem15') {
                             
-                        if ($row[semestre] == 'sem02')
+                        if ($row['semestre'] == 'sem02')
                             $anio_impr = 'Primero';
-                        if ($row[semestre] == 'sem04')
+                        if ($row['semestre'] == 'sem04')
                             $anio_impr = 'Segundo';
-                        if ($row[semestre] == 'sem06')
+                        if ($row['semestre'] == 'sem06')
                             $anio_impr = 'Tercero';
-                        if ($row[semestre] == 'sem08')
+                        if ($row['semestre'] == 'sem08')
                             $anio_impr = 'Cuarto';
-                        if ($row[semestre] == 'sem10')
+                        if ($row['semestre'] == 'sem10')
                             $anio_impr = 'Quinto';
-                        if ($row[semestre] == 'sem15')
+                        if ($row['semestre'] == 'sem15')
                             $anio_impr = 'Sexto';
                             
                         print <<<EOF
