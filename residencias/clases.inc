@@ -227,7 +227,7 @@
             //echo "$query </br>";
 
            # Ciclo para recorrer las carreras
-           while( $row = $result->fetch_assoc()) {
+           while($row = $result->fetch_assoc()) {
 
                 $contGrande_Priv_Hombre     = 0;
                 $contGrande_Priv_Mujer      = 0;
@@ -263,7 +263,7 @@
                 $contMicro_EduPriv_Mujer    = 0;
 
                 //echo "Num Control: $row[num_control] nombre: $row[nombre] sexo: $row[sexo] </br>";
-                $rubro = trim($row[carrera]);
+                $rubro = trim($row['carrera']);
 
                 // Consulta por cada carrera
                 $consulta_carrera = "SELECT distinct carrera, num_control, nombre, sexo, telefono, correo, empresa, nombre_proyecto, asesor_interno, fecha_inicio, fecha_termino FROM $BDSeleccionada where carrera = '$rubro' GROUP BY carrera, id";
@@ -276,8 +276,8 @@
                 //Ciclo del Detalle del Reporte
                 while($row_carrera = $result_carrera->fetch_assoc()) {
 
-                    $empresa = trim($row_carrera[empresa]);
-                    $sexo = $row_carrera[sexo];
+                    $empresa = trim($row_carrera['empresa']);
+                    $sexo = $row_carrera['sexo'];
 
                     #Obtener Empresa, Tipo y Sector
                     if ($empresa != '')
@@ -293,8 +293,8 @@
                         else
                         {
                             $row2 = $result2->fetch_assoc();
-                            $tipo = $row2[tipo];
-                            $sector = $row2[sector];
+                            $tipo = $row2['tipo'];
+                            $sector = $row2['sector'];
                             //echo "tipo: $tipo sector:$sector sexo:$sexo </br>";
 
                             $myResidencia -> armarReporte($tipo, $sector, $sexo);
