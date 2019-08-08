@@ -207,10 +207,10 @@ EOF;
             # Armar el reporte de MATRICULAS (6 años)
             while( $row = $result_matriculas->fetch_assoc()) {
 
-                if ($row[hom1] != null)
+                if ($row['hom1'] != null)
                 {
-                    $hom_matricula = $row[hom1];
-                    $muj_matricula = $row[muj1];
+                    $hom_matricula = $row['hom1'];
+                    $muj_matricula = $row['muj1'];
                 }  //cierre de if ($row[hom1] != null)
 
             }  //cierre while Matriculas
@@ -520,7 +520,7 @@ EOF;
             $matricula_corchete = 0;
 
             while( $row = $result_Cor->fetch_assoc()) 
-                    $matricula_corchete = $matricula_corchete + $row[hom1] + $row[muj1];;
+                    $matricula_corchete = $matricula_corchete + $row['hom1'] + $row['muj1'];;
         
         }
 
@@ -1092,11 +1092,11 @@ EOF;
             # Armar el reporte de MATRICULAS 6 años
             while( $row = $result_matriculas->fetch_assoc()) {
 
-                if ($row[hom1] != null)
+                if ($row['hom1'] != null)
                 {
         
-                    $hom_matricula = $row[hom1];
-                    $muj_matricula = $row[muj1];
+                    $hom_matricula = $row['hom1'];
+                    $muj_matricula = $row['muj1'];
 
                 }  //cierre de if ($row[hom1] != null)
                 
@@ -1120,15 +1120,15 @@ EOF;
 
             while( $row = $result_5anios->fetch_assoc()) {
 
-                $long_num_control = strlen ($row[num_control]);
+                $long_num_control = strlen ($row['num_control']);
 
                 if ($long_num_control == 9){
                     $num_control_cons = substr($row[num_control],-4);
                     $num_control_anio = substr($row[num_control],1,2);
                 }
                 if ($long_num_control == 8){
-                    $num_control_cons = substr($row[num_control],-4);
-                    $num_control_anio = substr($row[num_control],0,2);
+                    $num_control_cons = substr($row['num_control'],-4);
+                    $num_control_anio = substr($row['num_control'],0,2);
                 }
 
                 if ($long_num_control == 7) {       
@@ -1173,16 +1173,16 @@ EOF;
 
             while ($row = $result_6anios->fetch_assoc()) {
                 
-                $long_num_control = strlen ($row[num_control]);
+                $long_num_control = strlen ($row['num_control']);
 
                 if ($long_num_control == 9){
                     $num_control_cons = substr($row[num_control],-4);
                     $num_control_anio = substr($row[num_control],1,2);
                 }
                 if ($long_num_control == 8){
-                    $num_control_cons = substr($row[num_control],-4);
+                    $num_control_cons = substr($row['num_control'],-4);
                     
-                    $num_control_anio = substr($row[num_control],0,2);
+                    $num_control_anio = substr($row['num_control'],0,2);
                 }
 
                 if ($long_num_control == 7) {
