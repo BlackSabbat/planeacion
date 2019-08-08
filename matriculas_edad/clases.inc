@@ -939,7 +939,7 @@ EOF;
                 if ($row['hom16'] != null)
                 {
 
-                    if ($row[semestre] == 'sem01' or $row[semestre] == 'sem03' or $row[semestre] == 'sem05' or $row[semestre] == 'sem07' or $row[semestre] == 'sem09' or $row[semestre] == 'sem11') {
+                    if ($row['semestre'] == 'sem01' or $row['semestre'] == 'sem03' or $row['semestre'] == 'sem05' or $row['semestre'] == 'sem07' or $row['semestre'] == 'sem09' or $row['semestre'] == 'sem11') {
                     
                         $sumHom16      = 0; $sumHom17      = 0; $sumHom18      = 0; $sumHom19      = 0;
                         $sumHom20      = 0; $sumHom21      = 0; $sumHom22      = 0; $sumHom23      = 0;
@@ -968,81 +968,81 @@ EOF;
 
                     //CALCULOS EN EL REPORTE
 
-                    $sumHom16 = $sumHom16 + $row[hom16];
-                    $sumHom17 = $sumHom17 + $row[hom17];
-                    $sumHom18 = $sumHom18 + $row[hom18];
-                    $sumHom19 = $sumHom19 + $row[hom19];
-                    $sumHom20 = $sumHom20 + $row[hom20];
-                    $sumHom21 = $sumHom21 + $row[hom21];
-                    $sumHom22 = $sumHom22 + $row[hom22];
-                    $sumHom23 = $sumHom23 + $row[hom23];
-                    $sumHom24 = $sumHom24 + $row[hom24];
-                    $sumHom25 = $sumHom25 + $row[hom25];
-                    $sumHom26 = $sumHom26 + $row[hom26];
-                    $sumHom27 = $sumHom27 + $row[hom27];
-                    $sumHom28 = $sumHom28 + $row[hom28];
-                    $sumHom29 = $sumHom29 + $row[hom29];
-                    $sumHom30 = $sumHom30 + $row[hom30];
-                    $sumHom31 = $sumHom31 + $row[hom31];
-                    $sumHom32 = $sumHom32 + $row[hom32];
-                    $sumHom33 = $sumHom33 + $row[hom33];
-                    $sumHom34 = $sumHom34 + $row[hom34];
-                    $sumHom35 = $sumHom35 + $row[hom35];
-                    $sumHom36 = $sumHom36 + $row[hom36];
-                    $sumHom37 = $sumHom37 + $row[hom37];
-                    $sumHom38 = $sumHom38 + $row[hom38];
-                    $sumHom39 = $sumHom39 + $row[hom39];
+                    $sumHom16 = $sumHom16 + $row['hom16'];
+                    $sumHom17 = $sumHom17 + $row['hom17'];
+                    $sumHom18 = $sumHom18 + $row['hom18'];
+                    $sumHom19 = $sumHom19 + $row['hom19'];
+                    $sumHom20 = $sumHom20 + $row['hom20'];
+                    $sumHom21 = $sumHom21 + $row['hom21'];
+                    $sumHom22 = $sumHom22 + $row['hom22'];
+                    $sumHom23 = $sumHom23 + $row['hom23'];
+                    $sumHom24 = $sumHom24 + $row['hom24'];
+                    $sumHom25 = $sumHom25 + $row['hom25'];
+                    $sumHom26 = $sumHom26 + $row['hom26'];
+                    $sumHom27 = $sumHom27 + $row['hom27'];
+                    $sumHom28 = $sumHom28 + $row['hom28'];
+                    $sumHom29 = $sumHom29 + $row['hom29'];
+                    $sumHom30 = $sumHom30 + $row['hom30'];
+                    $sumHom31 = $sumHom31 + $row['hom31'];
+                    $sumHom32 = $sumHom32 + $row['hom32'];
+                    $sumHom33 = $sumHom33 + $row['hom33'];
+                    $sumHom34 = $sumHom34 + $row['hom34'];
+                    $sumHom35 = $sumHom35 + $row['hom35'];
+                    $sumHom36 = $sumHom36 + $row['hom36'];
+                    $sumHom37 = $sumHom37 + $row['hom37'];
+                    $sumHom38 = $sumHom38 + $row['hom38'];
+                    $sumHom39 = $sumHom39 + $row['hom39'];
 
-                    $sumMuj16 = $sumMuj16 + $row[muj16];
-                    $sumMuj17 = $sumMuj17 + $row[muj17];
-                    $sumMuj18 = $sumMuj18 + $row[muj18];
-                    $sumMuj19 = $sumMuj19 + $row[muj19];
-                    $sumMuj20 = $sumMuj20 + $row[muj20];
-                    $sumMuj21 = $sumMuj21 + $row[muj21];
-                    $sumMuj22 = $sumMuj22 + $row[muj22];
-                    $sumMuj23 = $sumMuj23 + $row[muj23];
-                    $sumMuj24 = $sumMuj24 + $row[muj24];
-                    $sumMuj25 = $sumMuj25 + $row[muj25];
-                    $sumMuj26 = $sumMuj26 + $row[muj26];
-                    $sumMuj27 = $sumMuj27 + $row[muj27];
-                    $sumMuj28 = $sumMuj28 + $row[muj28];
-                    $sumMuj29 = $sumMuj29 + $row[muj29];
-                    $sumMuj30 = $sumMuj30 + $row[muj30];
-                    $sumMuj31 = $sumMuj31 + $row[muj31];
-                    $sumMuj32 = $sumMuj32 + $row[muj32];
-                    $sumMuj33 = $sumMuj33 + $row[muj33];
-                    $sumMuj34 = $sumMuj34 + $row[muj34];
-                    $sumMuj35 = $sumMuj35 + $row[muj35];
-                    $sumMuj36 = $sumMuj36 + $row[muj36];
-                    $sumMuj37 = $sumMuj37 + $row[muj37];
-                    $sumMuj38 = $sumMuj38 + $row[muj38];
-                    $sumMuj39 = $sumMuj39 + $row[muj39];
+                    $sumMuj16 = $sumMuj16 + $row['muj16'];
+                    $sumMuj17 = $sumMuj17 + $row['muj17'];
+                    $sumMuj18 = $sumMuj18 + $row['muj18'];
+                    $sumMuj19 = $sumMuj19 + $row['muj19'];
+                    $sumMuj20 = $sumMuj20 + $row['muj20'];
+                    $sumMuj21 = $sumMuj21 + $row['muj21'];
+                    $sumMuj22 = $sumMuj22 + $row['muj22'];
+                    $sumMuj23 = $sumMuj23 + $row['muj23'];
+                    $sumMuj24 = $sumMuj24 + $row['muj24'];
+                    $sumMuj25 = $sumMuj25 + $row['muj25'];
+                    $sumMuj26 = $sumMuj26 + $row['muj26'];
+                    $sumMuj27 = $sumMuj27 + $row['muj27'];
+                    $sumMuj28 = $sumMuj28 + $row['muj28'];
+                    $sumMuj29 = $sumMuj29 + $row['muj29'];
+                    $sumMuj30 = $sumMuj30 + $row['muj30'];
+                    $sumMuj31 = $sumMuj31 + $row['muj31'];
+                    $sumMuj32 = $sumMuj32 + $row['muj32'];
+                    $sumMuj33 = $sumMuj33 + $row['muj33'];
+                    $sumMuj34 = $sumMuj34 + $row['muj34'];
+                    $sumMuj35 = $sumMuj35 + $row['muj35'];
+                    $sumMuj36 = $sumMuj36 + $row['muj36'];
+                    $sumMuj37 = $sumMuj37 + $row['muj37'];
+                    $sumMuj38 = $sumMuj38 + $row['muj38'];
+                    $sumMuj39 = $sumMuj39 + $row['muj39'];
 
                     //detalle de totales (hombres + mujeres)
                     $total16 = $total16 + $row['hom16'] + $row['muj16'];
                     $total17 = $total17 + $row['hom17'] + $row['muj17'];
-                    $total18 = $total18 + $row[hom18] + $row[muj18];
-                    $total19 = $total19 + $row[hom19] + $row[muj19];
-                    $total20 = $total20 + $row[hom20] + $row[muj20];
-                    $total21 = $total21 + $row[hom21] + $row[muj21];
-                    $total22 = $total22 + $row[hom22] + $row[muj22];
-                    $total23 = $total23 + $row[hom23] + $row[muj23];
-                    $total24 = $total24 + $row[hom24] + $row[muj24];
-                    $total25 = $total25 + $row[hom25] + $row[muj25];
-                    $total26 = $total26 + $row[hom26] + $row[muj26];
-                    $total27 = $total27 + $row[hom27] + $row[muj27];
-                    $total28 = $total28 + $row[hom28] + $row[muj28];
-                    $total29 = $total29 + $row[hom29] + $row[muj29];
-                    $total30 = $total30 + $row[hom30] + $row[muj30];
-                    $total31 = $total31 + $row[hom31] + $row[muj31];
-                    $total32 = $total32 + $row[hom32] + $row[muj32];
-                    $total33 = $total33 + $row[hom33] + $row[muj33];
-                    $total34 = $total34 + $row[hom34] + $row[muj34];
-                    $total35 = $total35 + $row[hom35] + $row[muj35]; 
-                    $total36 = $total36 + $row[hom36] + $row[muj36];
-                    $total37 = $total37 + $row[hom37] + $row[muj37];
-                    $total38 = $total38 + $row[hom38] + $row[muj38];
-                    $total39 = $total39 + $row[hom39] + $row[muj39];
+                    $total18 = $total18 + $row[hom18]   + $row['muj18'];
+                    $total19 = $total19 + $row[hom19]   + $row['muj19'];
+                    $total20 = $total20 + $row[hom20]   + $row['muj20'];
+                    $total21 = $total21 + $row[hom21]   + $row['muj21'];
+                    $total22 = $total22 + $row[hom22]   + $row['muj22'];
+                    $total23 = $total23 + $row[hom23]   + $row['muj23'];
+                    $total24 = $total24 + $row[hom24]   + $row['muj24'];
+                    $total25 = $total25 + $row[hom25]   + $row['muj25'];
+                    $total26 = $total26 + $row[hom26]   + $row['muj26'];
+                    $total27 = $total27 + $row[hom27]   + $row['muj27'];
+                    $total28 = $total28 + $row[hom28]   + $row['muj28'];
+                    $total29 = $total29 + $row[hom29]   + $row['muj29'];
+                    $total30 = $total30 + $row[hom30]   + $row['muj30'];
+                    $total31 = $total31 + $row[hom31]   + $row['muj31'];
+                    $total32 = $total32 + $row[hom32]   + $row['muj32'];
+                    $total33 = $total33 + $row[hom33]   + $row['muj33'];
+                    $total34 = $total34 + $row[hom34]   + $row['muj34'];
+                    $total35 = $total35 + $row[hom35]   + $row['muj35']; 
+                    $total36 = $total36 + $row[hom36]   + $row['muj36'];
+                    $total37 = $total37 + $row[hom37]   + $row['muj37'];
+                    $total38 = $total38 + $row[hom38]   + $row['muj38'];
+                    $total39 = $total39 + $row[hom39]   + $row['muj39'];
 
 
                     //totales finales en el reporte (hombres, mujeres y hombres + mujeres)
@@ -1056,7 +1056,7 @@ EOF;
 
                     //IMPRIMIR DETALLE DEL REPORTE
                     
-                    if ($row[semestre] == 'sem02' or $row[semestre] == 'sem04' or $row[semestre] == 'sem06' or $row[semestre] == 'sem08' or $row[semestre] == 'sem10' or $row[semestre] == 'sem15') {
+                    if ($row['semestre'] == 'sem02' or $row['semestre'] == 'sem04' or $row['semestre'] == 'sem06' or $row['semestre'] == 'sem08' or $row['semestre'] == 'sem10' or $row['semestre'] == 'sem15') {
                             
                         if ($row[semestre] == 'sem02')
                             $anio_impr = 'Primero';
