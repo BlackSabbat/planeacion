@@ -786,8 +786,8 @@ EOF;
                 }
 
                 if ($long_num_control == 7) {
-                    $num_control_cons = (substr($row[num_control],-3) . "5");
-                    $num_control_anio = substr($row[num_control],0,2);
+                    $num_control_cons = (substr($row['num_control'],-3) . "5");
+                    $num_control_anio = substr($row['num_control'],0,2);
                 }
 
                 if ( ($long_num_control == 7) or ($long_num_control == 8) or ($long_num_control == 9) ) {
