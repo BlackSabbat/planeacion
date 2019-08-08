@@ -251,7 +251,7 @@ EOF;
                 $ajuste_aprobados    =  ($reprobados['matricula'] - $suma_sinAjustar) + $reprobados['ninguna_rep'];
                 $suma_Ajustado       =  $suma_reprobados + $ajuste_aprobados;
 
-                $creditos_reprobados =  $reprobados[creditos_cursados] - $reprobados[creditos_aprobados];
+                $creditos_reprobados =  $reprobados['creditos_cursados'] - $reprobados['creditos_aprobados'];
 
                 if ($suma_Ajustado == 0){
                     $porcent_aprobados   =  0;
@@ -267,7 +267,7 @@ EOF;
                     $porcent_creditos_reprobados  =  0;
                 }
                 else {
-                    $porcent_creditos_aprobados   =  round ( ($reprobados[creditos_aprobados] / $reprobados['creditos_cursados']) * 100, 2 );
+                    $porcent_creditos_aprobados   =  round ( ($reprobados['creditos_aprobados'] / $reprobados['creditos_cursados']) * 100, 2 );
                     $porcent_creditos_reprobados  =  round ( ($creditos_reprobados / $reprobados['creditos_cursados']) * 100, 2 );
                 }
 
