@@ -127,7 +127,7 @@ EOF;
                 //definir CONSULTA DE MATRICULA de cada carrera
                 // Analizar si el reporte es por periodo escolar (ejem Ene-Jun 2017 a Ago-Dic 20018)
 
-                $carrera = $row1[carrera];
+                $carrera = $row1['carrera'];
 
                 // condicional si reporte es por ciclo escolar 
                 if ($swPerEsc == "1") {
@@ -231,24 +231,24 @@ EOF;
                 // Tabla del reporte
                 $reprobados = array(
                     
-                        carrera              =>   $row1[carrera],
-                        ninguna_rep          =>   $row1[ninguna_rep],
-                        reprobadas_1         =>   $row1[reprobadas_1],
-                        reprobadas_2         =>   $row1[reprobadas_2],
-                        reprobadas_3         =>   $row1[reprobadas_3],
-                        reprobadas_4         =>   $row1[reprobadas_4],
-                        creditos_cursados    =>   $row1[creditos_cursados],
-                        creditos_aprobados   =>   $row1[creditos_aprobados],
-                        periodo              =>   $row1[periodo],
-                        matricula            =>   $row2[mat]
+                        carrera              =>   $row1['carrera'],
+                        ninguna_rep          =>   $row1['ninguna_rep'],
+                        reprobadas_1         =>   $row1['reprobadas_1'],
+                        reprobadas_2         =>   $row1['reprobadas_2'],
+                        reprobadas_3         =>   $row1['reprobadas_3'],
+                        reprobadas_4         =>   $row1['reprobadas_4'],
+                        creditos_cursados    =>   $row1['creditos_cursados'],
+                        creditos_aprobados   =>   $row1['creditos_aprobados'],
+                        periodo              =>   $row1['periodo'],
+                        matricula            =>   $row2['mat']
 
                 );    
 
                 // Cálculos
-                $suma_reprobados     =  $reprobados[reprobadas_1] + $reprobados[reprobadas_2] + $reprobados[reprobadas_3] + $reprobados[reprobadas_4];
-                $suma_sinAjustar     =  $suma_reprobados + $reprobados[ninguna_rep];
+                $suma_reprobados     =  $reprobados['reprobadas_1'] + $reprobados['reprobadas_2'] + $reprobados['reprobadas_3'] + $reprobados['reprobadas_4'];
+                $suma_sinAjustar     =  $suma_reprobados + $reprobados['ninguna_rep'];
 
-                $ajuste_aprobados    =  ($reprobados[matricula] - $suma_sinAjustar) + $reprobados[ninguna_rep];
+                $ajuste_aprobados    =  ($reprobados['matricula'] - $suma_sinAjustar) + $reprobados['ninguna_rep'];
                 $suma_Ajustado       =  $suma_reprobados + $ajuste_aprobados;
 
                 $creditos_reprobados =  $reprobados[creditos_cursados] - $reprobados[creditos_aprobados];
@@ -262,13 +262,13 @@ EOF;
                     $porcent_reprobados  =  round ( ($suma_reprobados  / $suma_Ajustado) * 100, 2 );
                 }
 
-                if ($reprobados[creditos_cursados] == 0){
+                if ($reprobados['creditos_cursados'] == 0){
                     $porcent_creditos_aprobados   =  0;
                     $porcent_creditos_reprobados  =  0;
                 }
                 else {
-                    $porcent_creditos_aprobados   =  round ( ($reprobados[creditos_aprobados] / $reprobados[creditos_cursados]) * 100, 2 );
-                    $porcent_creditos_reprobados  =  round ( ($creditos_reprobados / $reprobados[creditos_cursados]) * 100, 2 );
+                    $porcent_creditos_aprobados   =  round ( ($reprobados[creditos_aprobados] / $reprobados['creditos_cursados']) * 100, 2 );
+                    $porcent_creditos_reprobados  =  round ( ($creditos_reprobados / $reprobados['creditos_cursados']) * 100, 2 );
                 }
 
                 // FIN Cálculos
@@ -308,15 +308,15 @@ EOF;
 
 EOF;
                 //actualizar totales de la tabla
-                $total_ninguna_rep          =   $total_ninguna_rep          +  $reprobados[ninguna_rep];
+                $total_ninguna_rep          =   $total_ninguna_rep          +  $reprobados['ninguna_rep'];
                 $total_ninguna_rep2         =   $total_ninguna_rep2         +  $ajuste_aprobados;
-                $total_reprobadas_1         =   $total_reprobadas_1         +  $reprobados[reprobadas_1];
-                $total_reprobadas_2         =   $total_reprobadas_2         +  $reprobados[reprobadas_2];
-                $total_reprobadas_3         =   $total_reprobadas_3         +  $reprobados[reprobadas_3];    
-                $total_reprobadas_4         =   $total_reprobadas_4         +  $reprobados[reprobadas_4];
+                $total_reprobadas_1         =   $total_reprobadas_1         +  $reprobados['reprobadas_1'];
+                $total_reprobadas_2         =   $total_reprobadas_2         +  $reprobados['reprobadas_2'];
+                $total_reprobadas_3         =   $total_reprobadas_3         +  $reprobados['reprobadas_3'];    
+                $total_reprobadas_4         =   $total_reprobadas_4         +  $reprobados['reprobadas_4'];
                 $total_sinAjustar           =   $total_sinAjustar           +  $suma_sinAjustar;
                 $total_Ajustado             =   $total_Ajustado             +  $suma_Ajustado;
-                $total_creditos_aprobados   =   $total_creditos_aprobados   +  $reprobados[creditos_aprobados];
+                $total_creditos_aprobados   =   $total_creditos_aprobados   +  $reprobados['creditos_aprobados'];
                 $total_creditos_reprobados  =   $total_creditos_reprobados  +  $creditos_reprobados;
 
                 /*
