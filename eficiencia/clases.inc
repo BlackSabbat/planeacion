@@ -22,7 +22,7 @@
 
             // CONSULTA 1er INGRESO (MATRICULAS 6 años previos a la titulacion o egreso)
 
-            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
+            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST') || ($carrera == 'ING SISTEMAS COMP. DIST')) {
                 
                 #incluir en consulta tambien carreas a distancia
                 if (($carrera == 'ING INDUSTRIAL DIST')){
@@ -30,6 +30,9 @@
                 }
                 if ($carrera == 'ING GESTION EMPR. DIST') {
                     $carrera2 = 'ING GESTION EMPR.';
+                }
+                if ($carrera == 'ING SISTEMAS COMP. DIST') {
+                    $carrera2 = 'ING SISTEMAS COMP.';
                 }
 
                 $consulta_matriculas = "SELECT 
@@ -315,7 +318,7 @@ EOF;
             
             
 
-            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
+            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST') || ($carrera == 'ING SISTEMAS COMP. DIST')) {
                 
                 #incluir en consulta tambien carreas a distancia
                 if (($carrera == 'ING INDUSTRIAL DIST')){
@@ -324,6 +327,10 @@ EOF;
                 if ($carrera == 'ING GESTION EMPR. DIST') {
                     $carrera2 = 'ING GESTION EMPR.';
                 }
+                if ($carrera == 'ING SISTEMAS COMP DIST') {
+                    $carrera2 = 'ING SISTEMAS COMP.';
+                }
+
 
                 $consulta_matriculas = "SELECT 
                 sum(hom1)  as hom1,
@@ -590,13 +597,16 @@ EOF;
             $fecha_TNM2 = $sem_temp . strval($anio_temp);
 
             // considerar educacion a distancia en el reporte
-            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
+            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
                 
                 if (($carrera == 'ING INDUSTRIAL DIST')){
                     $carrera2 = 'ING INDUSTRIAL';
                 }
                 if ($carrera == 'ING GESTION EMPR. DIST') {
                     $carrera2 = 'ING GESTION EMPR.';
+                }
+                if ($carrera == 'ING SISTEMAS COMP. DIST') {
+                    $carrera2 = 'ING SISTEMAS COMP.';
                 }
 
                 $consulta_matriculas = "SELECT 
@@ -884,13 +894,16 @@ EOF;
 
             // CONSULTA 1er INGRESO (MATRICULAS 6 años)
 
-            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
+            if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST') || ($carrera == 'ING SISTEMAS COMP. DIST')) {
                 
                 if (($carrera == 'ING INDUSTRIAL DIST')){
                     $carrera2 = 'ING INDUSTRIAL';
                 }
                 if ($carrera == 'ING GESTION EMPR. DIST') {
                     $carrera2 = 'ING GESTION EMPR.';
+                }
+                if ($carrera == 'ING SISTEMAS COMP DIST') {
+                    $carrera2 = 'ING SISTEMAS COMP.';
                 }
 
                 $consulta_matriculas = "SELECT 

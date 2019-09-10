@@ -203,7 +203,7 @@ EOF;
                             $carrera = 'ING GESTION EMPR.';
                         }
                         if ($carrera == 'ING SISTEMAS COMP. DIST') {
-                                    $carrera = 'ING SISTEMAS COMP.';
+                            $carrera = 'ING SISTEMAS COMP.';
                         }
 
                         $consulta2 = "SELECT sum(hom1+muj1+hom2+muj2+hom3+muj3+hom4+muj4+hom5+muj5+hom6+muj6+hom7+muj7+hom8+muj8+hom9+muj9+hom10+muj10+hom11+muj11+hom12+muj12+hom13+muj13+hom14+muj14+hom15+muj15+hom16+muj16+hom17+muj17+hom18+muj18+hom19+muj19+hom20+muj20) as mat
