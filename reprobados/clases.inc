@@ -115,6 +115,7 @@ EOF;
             $total_reprobadas_2         = 0;     
             $total_reprobadas_3         = 0;         
             $total_reprobadas_4         = 0;
+            $total_reprobadas_5         = 0;
             $total_sinAjustar           = 0;
             $total_Ajustado             = 0;  
             $total_creidtos_cursados    = 0;
@@ -151,7 +152,7 @@ EOF;
                         }
 
                         // Evaluar si carreras son a distancia
-                        if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
+                        if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST') || ($carrera == 'ING SISTEMAS COMP. DIST')) {
 
                                 #incluir en consulta tambien carreas a distancia
                                 if (($carrera == 'ING INDUSTRIAL DIST')){
@@ -159,6 +160,9 @@ EOF;
                                 }
                                 if ($carrera == 'ING GESTION EMPR. DIST') {
                                     $carrera = 'ING GESTION EMPR.';
+                                }
+                                if ($carrera == 'ING SISTEMAS COMP. DIST') {
+                                    $carrera = 'ING SISTEMAS COMP.';
                                 }
 
                                 $consulta2 = "SELECT sum(hom1+muj1+hom2+muj2+hom3+muj3+hom4+muj4+hom5+muj5+hom6+muj6+hom7+muj7+hom8+muj8+hom9+muj9+hom10+muj10+hom11+muj11+hom12+muj12+hom13+muj13+hom14+muj14+hom15+muj15+hom16+muj16+hom17+muj17+hom18+muj18+hom19+muj19+hom20+muj20) as mat
@@ -189,7 +193,7 @@ EOF;
                 else {
                     
                     // Evaluar si carreras son a distancia 
-                    if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST')) {
+                    if (($carrera == 'ING INDUSTRIAL DIST') || ($carrera == 'ING GESTION EMPR. DIST') || ($carrera == 'ING SISTEMAS COMP. DIST')) {
 
                         #incluir en consulta tambien carreas a distancia
                         if ($carrera == 'ING INDUSTRIAL DIST'){
@@ -198,6 +202,10 @@ EOF;
                         if ($carrera == 'ING GESTION EMPR. DIST') {
                             $carrera = 'ING GESTION EMPR.';
                         }
+                        if ($carrera == 'ING SISTEMAS COMP. DIST') {
+                                    $carrera = 'ING SISTEMAS COMP.';
+                        }
+
                         $consulta2 = "SELECT sum(hom1+muj1+hom2+muj2+hom3+muj3+hom4+muj4+hom5+muj5+hom6+muj6+hom7+muj7+hom8+muj8+hom9+muj9+hom10+muj10+hom11+muj11+hom12+muj12+hom13+muj13+hom14+muj14+hom15+muj15+hom16+muj16+hom17+muj17+hom18+muj18+hom19+muj19+hom20+muj20) as mat
                             FROM $tabla2 
                             WHERE (carrera = '$carrera' and distancia = 'si' and (periodo = '$BDSeleccionada'))";
@@ -226,6 +234,8 @@ EOF;
                 $query2 = $consulta2;
                 $result2 = $db->query($query2);
 
+                //echo "$query2 </br>";
+
                 $row2 = $result2->fetch_assoc();
 
                 // Tabla del reporte
@@ -237,6 +247,7 @@ EOF;
                         'reprobadas_2'         =>   $row1['reprobadas_2'],
                         'reprobadas_3'         =>   $row1['reprobadas_3'],
                         'reprobadas_4'         =>   $row1['reprobadas_4'],
+                        'reprobadas_5'         =>   $row1['reprobadas_5'],
                         'creditos_cursados'    =>   $row1['creditos_cursados'],
                         'creditos_aprobados'   =>   $row1['creditos_aprobados'],
                         'periodo'              =>   $row1['periodo'],
@@ -245,7 +256,7 @@ EOF;
                 );    
 
                 // Cálculos
-                $suma_reprobados     =  $reprobados['reprobadas_1'] + $reprobados['reprobadas_2'] + $reprobados['reprobadas_3'] + $reprobados['reprobadas_4'];
+                $suma_reprobados     =  $reprobados['reprobadas_1'] + $reprobados['reprobadas_2'] + $reprobados['reprobadas_3'] + $reprobados['reprobadas_4'] + $reprobados['reprobadas_5'];
                 $suma_sinAjustar     =  $suma_reprobados + $reprobados['ninguna_rep'];
 
                 $ajuste_aprobados    =  ($reprobados['matricula'] - $suma_sinAjustar) + $reprobados['ninguna_rep'];
@@ -290,6 +301,7 @@ EOF;
                         <td id="DetalleChico">$reprobados[reprobadas_2]     </td>
                         <td id="DetalleChico">$reprobados[reprobadas_3]     </td>
                         <td id="DetalleChico">$reprobados[reprobadas_4]     </td>
+                        <td id="DetalleChico">$reprobados[reprobadas_5]     </td>
                         -->
                         <td id="DetalleChico">$suma_reprobados              </td>
 
@@ -314,6 +326,7 @@ EOF;
                 $total_reprobadas_2         =   $total_reprobadas_2         +  $reprobados['reprobadas_2'];
                 $total_reprobadas_3         =   $total_reprobadas_3         +  $reprobados['reprobadas_3'];    
                 $total_reprobadas_4         =   $total_reprobadas_4         +  $reprobados['reprobadas_4'];
+                $total_reprobadas_5         =   $total_reprobadas_5         +  $reprobados['reprobadas_5'];
                 $total_sinAjustar           =   $total_sinAjustar           +  $suma_sinAjustar;
                 $total_Ajustado             =   $total_Ajustado             +  $suma_Ajustado;
                 $total_creditos_aprobados   =   $total_creditos_aprobados   +  $reprobados['creditos_aprobados'];
@@ -332,7 +345,7 @@ EOF;
 
             // Imprmir Totales de tabla
 
-            $total_reprobados       = $total_reprobadas_1 + $total_reprobadas_2 + $total_reprobadas_3 + $total_reprobadas_4;
+            $total_reprobados       = $total_reprobadas_1 + $total_reprobadas_2 + $total_reprobadas_3 + $total_reprobadas_4 + $total_reprobadas_5;
             $porcentaje_aprobados   = round( ( $total_ninguna_rep2  / $total_Ajustado) * 100, 2);
             $porcentaje_reprobados  = round(( $total_reprobados / $total_Ajustado) * 100, 2);
             $porcentaje_creditos_aprobados  =  round (($total_creditos_aprobados  / ($total_creditos_aprobados + $total_creditos_reprobados) * 100), 2);
@@ -353,6 +366,7 @@ EOF;
                 <th id="TotalesChico">$total_reprobadas_2           </th>
                 <th id="TotalesChico">$total_reprobadas_3           </th>
                 <th id="TotalesChico">$total_reprobadas_4           </th>
+                <th id="TotalesChico">$total_reprobadas_5           </th>
                 -->
                 <th id="TotalesChico">$total_reprobados             </th>
 
