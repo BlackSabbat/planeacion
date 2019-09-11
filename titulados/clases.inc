@@ -456,31 +456,31 @@ EOF;
                         print <<<EOF
                         <td id="DetalleChico" >$hom21                  </td>
                         <td id="DetalleChico" >$muj21                  </td>
-                        <th id="DetalleChico" >$total21                </th>
+                        <td id="DetalleChico" >$total21                </td>
                         <td id="DetalleChico" >$hom22                  </td>
                         <td id="DetalleChico" >$muj22                  </td>
-                        <th id="DetalleChico" >$total22                </th>
+                        <td id="DetalleChico" >$total22                </td>
                         <td id="DetalleChico" >$hom23                  </td>
                         <td id="DetalleChico" >$muj23                  </td>
-                        <th id="DetalleChico" >$total23                </th>
+                        <td id="DetalleChico" >$total23                </td>
                         <td id="DetalleChico" >$hom24                  </td>
                         <td id="DetalleChico" >$muj24                  </td>
-                        <th id="DetalleChico" >$total24                </th>
+                        <td id="DetalleChico" >$total24                </td>
                         <td id="DetalleChico" >$hom25                  </td>
                         <td id="DetalleChico" >$muj25                  </td>
-                        <td id="DetalleChico" >$total25                </th>
+                        <td id="DetalleChico" >$total25                </td>
                         <td id="DetalleChico" >$hom26                  </td>
                         <td id="DetalleChico" >$muj26                  </td>
-                        <th id="DetalleChico" >$total26                </th>
+                        <td id="DetalleChico" >$total26                </td>
                         <td id="DetalleChico" >$hom30                  </td>
                         <td id="DetalleChico" >$muj30                  </td>
-                        <th id="DetalleChico" >$total30                </th>
+                        <td id="DetalleChico" >$total30                </td>
 EOF;
                     }
                     print <<<EOF
-                    <th id="DetalleMasChico" >$hom_carrera            </th>
-                    <th id="DetalleMasChico" >$muj_carrera            </th>
-                    <th id="DetalleChico">$gran_carrera       </th>
+                    <td id="DetalleChico" >$hom_carrera                </td>
+                    <td id="DetalleChico" >$muj_carrera                </td>
+                    <td id="DetalleChico" >$gran_carrera               </td>
                 </tr> 
 EOF;
 
@@ -503,33 +503,33 @@ EOF;
             if ($swEsconde == 0)
             {
                 print <<<EOF
-                <th id="TotalesChico">$total_hom21 </th>
-                <th id="TotalesChico">$total_muj21 </th>
-                <th id="TotalesChico">$total_gran21</th>
-                <th id="TotalesChico">$total_hom22 </th>
-                <th id="TotalesChico">$total_muj22 </th>
-                <th id="TotalesChico">$total_gran22</th>
-                <th id="TotalesChico">$total_hom23 </th>
-                <th id="TotalesChico">$total_muj23 </th>
-                <th id="TotalesChico">$total_gran23</th>
-                <th id="TotalesChico">$total_hom24 </th>
-                <th id="TotalesChico">$total_muj24 </th>
-                <th id="TotalesChico">$total_gran24</th>
-                <th id="TotalesChico">$total_hom25 </th>
-                <th id="TotalesChico">$total_muj25 </th>
-                <th id="TotalesChico">$total_gran25</th>
-                <th id="TotalesChico">$total_hom26 </th>
-                <th id="TotalesChico">$total_muj26 </th>
-                <th id="TotalesChico">$total_gran26</th>
-                <th id="TotalesChico">$total_hom30 </th>
-                <th id="TotalesChico">$total_muj30 </th>
-                <th id="TotalesChico">$total_gran30</th>
+                <td id="TotalesChico">$total_hom21 </td>
+                <td id="TotalesChico">$total_muj21 </td>
+                <td id="TotalesChico">$total_gran21</td>
+                <td id="TotalesChico">$total_hom22 </td>
+                <td id="TotalesChico">$total_muj22 </td>
+                <td id="TotalesChico">$total_gran22</td>
+                <td id="TotalesChico">$total_hom23 </td>
+                <td id="TotalesChico">$total_muj23 </td>
+                <td id="TotalesChico">$total_gran23</td>
+                <td id="TotalesChico">$total_hom24 </td>
+                <td id="TotalesChico">$total_muj24 </td>
+                <td id="TotalesChico">$total_gran24</td>
+                <td id="TotalesChico">$total_hom25 </td>
+                <td id="TotalesChico">$total_muj25 </td>
+                <td id="TotalesChico">$total_gran25</td>
+                <td id="TotalesChico">$total_hom26 </td>
+                <td id="TotalesChico">$total_muj26 </td>
+                <td id="TotalesChico">$total_gran26</td>
+                <td id="TotalesChico">$total_hom30 </td>
+                <td id="TotalesChico">$total_muj30 </td>
+                <td id="TotalesChico">$total_gran30</td>
 EOF;
             }
             print <<<EOF
-            <th id="TotalesChico">$hom_gral    </th>
-            <th id="TotalesChico">$muj_gral    </th>
-            <th id="TotalesChico">$gran_gral   </th>
+            <td id="TotalesChico">$hom_gral    </td>
+            <td id="TotalesChico">$muj_gral    </td>
+            <td id="TotalesChico">$gran_gral   </td>
         </tr>
 
 EOF;
