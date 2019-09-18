@@ -61,7 +61,7 @@ EOF;
             //echo "borrar de estatales: $curp <br>";
 
             $db3 = new mysqli($host, $user, $pwd, $base_datos);
-            $consulta3 = "update plantilla_Ene_Jul_2019 set observaciones = '$observaciones ,con dualidad de plaza' where curp = '$curp' and tipo like 'estatal'";
+            $consulta3 = "update $BDSeleccionada set observaciones = '$observaciones ,con dualidad de plaza' where curp = '$curp' and tipo like 'estatal'";
             //echo "$consulta3</br>";
             $result3 = $db3->query($consulta3);
         }

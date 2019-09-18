@@ -67,7 +67,7 @@
 
             $query = $consulta;
             $result = $db->query($query);
-
+            
             # Armar el reporte
             while( $row = $result->fetch_assoc()) {
                 #echo "<p>Empleado:$row[nombre]"; echo " "; echo "CURP:$row['curp']"; echo " "; echo "plaza:$row['plaza']</p>\n";
