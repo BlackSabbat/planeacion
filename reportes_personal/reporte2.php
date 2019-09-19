@@ -159,6 +159,7 @@ EOF;
     preparacion_academica = 'CONTADOR PRIVADO ' or
     preparacion_academica = 'CONTADOR PRIVADO' or
     preparacion_academica = 'INGENIERO CIVIL' or
+    preparacion_academica = 'ELECTRONICA' or
     preparacion_academica like '%LICENC%' or
     preparacion_academica = 'QUIMICO FARMACOBIOOLOGO' or
     preparacion_academica like 'bachillerato ') and tipo='federal'";
@@ -315,7 +316,7 @@ EOF;
 
     $consulta = "select * from $BDSeleccionada where (plaza not like 'E%') and (
     preparacion_academica = 'SECUNDARIA' or
-    preparacion_academica like '%MED. BASICA, ESP%' or
+    preparacion_academica like '%MED. BASICA%' or
     preparacion_academica like 'SECUNDARIA. DIPLOMADO EN COMP%') and tipo='estatal' and observaciones not like '%dualidad de plaza%'";
     $myEmpleado -> reporte2($consulta, $db, $host, $user, $pwd);
     $myEmpleado -> imprimirReporte2($rubro,$contadorHombre_Uno, $contadorMujer_Uno, $contadorHombre_Dos, $contadorMujer_Dos, $contadorHombre_Tres, $contadorMujer_Tres,$swPrintHeadings);
