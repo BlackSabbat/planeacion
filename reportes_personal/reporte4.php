@@ -63,7 +63,7 @@
    <table>
        <tr>
            <td>
-               Personal Estatal:
+               Personal Federal:
            </td>
        </tr>
    </table>

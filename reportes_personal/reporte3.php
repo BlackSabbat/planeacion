@@ -19,6 +19,14 @@
 
     # Tabla del Reporte
     print <<<EOF
+    <table>
+       <tr>
+           <td>
+               Personal Federal:
+           </td>
+       </tr>
+    </table>
+    
     <table width = 500>
 EOF;
 
@@ -166,6 +174,13 @@ EOF;
         <tr>
             <td>&nbsp;</td>
         </tr>
+    </table>
+    <table>
+       <tr>
+           <td>
+               Personal Estatal:
+           </td>
+       </tr>
     </table>
 EOF;
 
