@@ -1180,7 +1180,7 @@ EOF;
                         $total_hom_32  = $total_hom_32 + $sumHom32;
                         $total_hom_33  = $total_hom_33 + $sumHom33;
                         $total_hom_34  = $total_hom_34 + $sumHom34;
-                        $total_hom_35  = $total_hom_35 + $sumHom36;
+                        $total_hom_35  = $total_hom_35 + $sumHom35;
                         $total_hom_36  = $total_hom_36 + $sumHom36;
                         $total_hom_37  = $total_hom_37 + $sumHom37;
                         $total_hom_38  = $total_hom_38 + $sumHom38;
