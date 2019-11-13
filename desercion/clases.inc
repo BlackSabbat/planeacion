@@ -320,7 +320,7 @@ EOF;
                     }
 
                     $consulta3 = "SELECT carrera, abierta, distancia, vespertino, sum(hom2+hom3+hom4+hom5+hom6+hom7+hom8+hom9+hom10+hom11+hom12+hom13+hom14+hom15+hom16+hom17+hom18+hom19+hom20) as hom_reingreso, sum(muj2+muj3+muj4+muj5+muj6+muj7+muj8+muj9+muj10+muj11+muj12+muj13+muj14+muj15+muj16+muj17+muj18+muj19+muj20) as muj_reingreso 
-                        FROM $tabla1 
+                        FROM $tabla1
                         WHERE (carrera = '$carrera2' and abierta = '$abierta' and distancia = '$distancia' and vespertino = '$vespertino' and tipo = '$tipo' and (periodo = '$periodo2'))
                         group by carrera, abierta, distancia, vespertino";
 
@@ -336,6 +336,9 @@ EOF;
                 //echo "$query3</br>";
 
                 // contadores de Reingreso
+
+                $hom_reing = 0; 
+                $muj_reing = 0;
                 
                 
                 while($row3 = $result3->fetch_assoc()) {

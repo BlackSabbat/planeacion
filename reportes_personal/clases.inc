@@ -70,7 +70,7 @@
             
             # Armar el reporte
             while( $row = $result->fetch_assoc()) {
-                #echo "<p>Empleado:$row[nombre]"; echo " "; echo "CURP:$row['curp']"; echo " "; echo "plaza:$row['plaza']</p>\n";
+                //echo "Empleado:$row[nombre]"; echo " "; echo "CURP:$row['curp']"; echo " "; echo "plaza:$row['plaza']</br>";
                 $plaza = (substr ($row['plaza'], 0, 3));
                 $sexo = (substr ($row['curp'], 10, 1));
                 if ($plaza == 'E38')
