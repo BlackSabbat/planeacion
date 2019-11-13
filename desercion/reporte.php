@@ -69,11 +69,11 @@ EOF;
                                     switch ($reporteNombre)
                                     {
 
-                                        // Reprobados por Semestre
+                                        // Desertados por Semestre
                                         case "reporte1":
 
                                             // Encabezado
-                                            echo "<tr><td>Reprobados en Semestre: $anio_reporte </td></td>";
+                                            echo "<tr><td>Desertados en Semestre: $anio_reporte </td></td>";
 
                                             echo "<tr><td id=\"SubEncabezadoChico\"> Fecha: $fecha  &nbsp; Hora: $hora </td></td>";
                                             # ------------------------------------------
@@ -117,7 +117,7 @@ EOF;
                                             break;
                                             
 
-                                        // Reprobados por Ciclo Escolar
+                                        // Desertados por Ciclo Escolar
                                         case "reporte2":
 
                                             // Encabezado
@@ -129,14 +129,14 @@ EOF;
                                                 $anio_bd_2 = $anio_bd_1 - 1;
                                                 $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                                echo "<tr><td>Reprobados en Periodo: $periodo2 - $anio_reporte</td></td>";  
+                                                echo "<tr><td>Desertados en Periodo: $periodo2 - $anio_reporte</td></td>";  
                                             }
                                             else {
                                                 $mes_bd_2  = 'ene_jun_';
                                                 $anio_bd_2 = $anio_bd_1 + 1;
                                                 $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                                echo "<tr><td>Reprobados en Periodo: $anio_reporte - $periodo2</td></td>";
+                                                echo "<tr><td>Desertados en Periodo: $anio_reporte - $periodo2</td></td>";
                                             }
                                             
 
