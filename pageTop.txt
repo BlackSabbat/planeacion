@@ -6,7 +6,7 @@
                     <img src="/images/logo.jpg" border="0" alt="Este es el ejemplo de un texto alternativo" width="70" height="70" align = "top">
                 </td>
                 <td>
-                    TEC Saltillo, Planeación, Programación y Presupuestación
+                    TEC SALTILLO, PLANEACIÓN PROGRAMACIÓN Y PRESUPUESTACIÓN
                 </td>
             </tr>
             <tr id="subtitulo">
