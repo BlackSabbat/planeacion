@@ -3,5 +3,6 @@
             <img src="/images/BurroBlanco223.jpg" border="0" alt="Este es el ejemplo de un texto alternativo" align = "right">            
         </div>  <!-- end footer -->
         
+
     </body>
 </html>

@@ -7,12 +7,6 @@ fieldset { border:0px;}
       border: 0;
 }
 
-#reportes {
-    
-    width: 100%;
-    border: 0;
-}
-
 #menu ul {
           text-align: left;
 }
@@ -70,8 +64,6 @@ body {
         display: inline;
 }
 
-
-
 #sidebar {
     float: left;
     width: 350px;
@@ -96,7 +88,7 @@ body {
           font-size: 12px;
           padding: 20px;
           width: 96%;
-          margin-top: 40px;
+          margin-top: 150px;
           height: 15%;
           clear: left;
           float: right;
@@ -115,14 +107,15 @@ body {
 }
 
 table {
-  overflow:hidden;
   border-collapse: collapse;
   clear: left;
   float: left;
   border: black;
 }
 
-
+table td{
+    vertical-align: top;
+}
 
 table tr td{
   padding: 3px;
@@ -134,36 +127,11 @@ tr.hide_all > td, th.hide_all{
     border: 0;
  }
 
-/*
 #trChico:nth-child(even) {
     background-color: rgb(56, 196, 196);
     vertical-align: top;
-}
-*/
 
-#federal .selected {
-    
-    background-color: rgb(56, 196, 196);
 }
-
- #federal  tr:hover {
-    background-color: #ffa;
-  }
-  
-  td, th {
-    position: relative;
-  }
-  #federal td:hover::after,
-  #federal th:hover::after {
-    content: "";
-    position: absolute;
-    background-color: #ffa;
-    left: 0;
-    top: -5000px;
-    height: 10000px;
-    width: 100%;
-    z-index: -1;
-  }
 
 table th {
   font-size: 14px;
@@ -194,73 +162,56 @@ table tr th {
     padding: 3px;
     color: #FFFFFF;
     text-align: center;
-    
+    border: 1px solid #cccaca;
 } 
 
 #TotalesChico {
     background: rgb(0, 0, 0);
-    font-size: 14px;
+    font-size: 12px;
     color: #FFFFFF;
     text-align: right;
-   
-    
-} 
-
-#TotalesChicoEdad {
-    background: rgb(0, 0, 0);
-    font-size: 14px;
-    color: #FFFFFF;
-    text-align: center;
-    
-    
 } 
 
 #DetalleChico {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     text-align: right;
-    
+   
 }
 
 #DetalleChicoIzq {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
-    
 }
 
 #DetalleChicoCen {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-    
 }
 
 #DetalleTitulo {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
-   
 }
 
 #DetalleChicoTotal {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     background: rgb(56, 196, 196);
     padding: 3px;
     text-align: right;
     vertical-align: top;
-    
 }
 
 #DetallePrimerIngreso {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     background: rgb(255, 246, 66);
     padding: 3px;
     text-align: right;
-    
-    
 }
 
 #DetalleMasChico {
@@ -272,7 +223,7 @@ table tr th {
 
 #DetalleMasChicoTotal {
     font-style: normal;
-    font-size: 14px;
+    font-size: 12px;
     background: rgb(252, 250, 214);
     text-align: right;
     reset

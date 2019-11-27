@@ -140,17 +140,17 @@
                         <th id="subEncabezado" colspan=3> TOTAL            </th>
                     </tr>
                     <tr>
-                        <th id="subEncabezado">H                           </th>
-                        <th id="subEncabezado">M                           </th>
+                        <th id="subEncabezado">Hom                         </th>
+                        <th id="subEncabezado">Muj                         </th>
                         <th id="subEncabezado">Tot                         </th>
-                        <th id="subEncabezado">H                           </th>
-                        <th id="subEncabezado">M                           </th>
+                        <th id="subEncabezado">Hom                         </th>
+                        <th id="subEncabezado">Muj                         </th>
                         <th id="subEncabezado">Tot                         </th>
-                        <th id="subEncabezado">H                           </th>
-                        <th id="subEncabezado">M                           </th>
+                        <th id="subEncabezado">Hom                         </th>
+                        <th id="subEncabezado">Muj                         </th>
                         <th id="subEncabezado">Tot                         </th>
-                        <th id="subEncabezado">H                           </th>
-                        <th id="subEncabezado">M                           </th>
+                        <th id="subEncabezado">Hom                         </th>
+                        <th id="subEncabezado">Muj                         </th>
                         <th id="subEncabezado">Tot                         </th>
                         <th id="subEncabezado">Hom                         </th>
                         <th id="subEncabezado">Muj                         </th>
@@ -165,7 +165,7 @@ EOF;
                 $subtotal4 = $contadorHombre_Asignatura + $contadorMujer_Asignatura;
 
                 print <<<EOF
-                <tr id="trChico">
+                <tr id="trChico"> 
                     <td id="DetalleChico">$rubro</td>
                     <td id="DetalleChico">$contadorHombre_TiempoCompleto    </td>
                     <td id="DetalleChico">$contadorMujer_TiempoCompleto     </td>
@@ -280,7 +280,7 @@ EOF;
                     <tr>
                         <th rowspan=2 id="subEncabezado"> RUBRO      </th>
                         <th colspan=3 id="subEncabezado"> SERVICIOS  </th>
-                        <th colspan=3 id="subEncabezado"> ADMON.     </th>
+                        <th colspan=3 id="subEncabezado"> ADMVOS.    </th>
                         <th colspan=3 id="subEncabezado"> ANALISTAS  </th>
                         <th colspan=3 id="subEncabezado"> TOTAL      </th>
                     </tr>
@@ -294,9 +294,9 @@ EOF;
                         <td id="subEncabezado">Hom                   </td>
                         <td id="subEncabezado">Muj                   </td>
                         <td id="subEncabezado">Tot                   </td>
-                        <td id="subEncabezado">Hombres               </td>
-                        <td id="subEncabezado">Mujeres               </td>
-                        <td id="subEncabezado">Total                 </td>
+                        <td id="subEncabezado">Hom                   </td>
+                        <td id="subEncabezado">Muj                   </td>
+                        <td id="subEncabezado">Tot                   </td>
                     </tr>
 EOF;
                 }
@@ -569,91 +569,91 @@ EOF;
             print <<<EOF
                 </br>
                 <tr>
-                    <th id="subEncabezado">Edad (años)                      </th>
-                    <th id="subEncabezado">Hombres                          </th>
-                    <th id="subEncabezado">Mujeres                          </th>
-                    <th id="subEncabezado">Total                            </th>
-                    <th id="subEncabezado">Antig. (años)                    </th>
-                    <th id="subEncabezado">Hombres                          </th>
-                    <th id="subEncabezado">Mujeres                          </th>
-                    <th id="subEncabezado">Total                            </th>
+                    <th id="TotalesChico">Edad (rango en años)            </th>
+                    <th id="subEncabezado">Hom                             </th>
+                    <th id="subEncabezado">Muj                             </th>
+                    <th id="subEncabezado">Total                           </th>
+                    <th id="TotalesChico">Antig. (años)                   </th>
+                    <th id="subEncabezado">Hom                             </th>
+                    <th id="subEncabezado">Muj                             </th>
+                    <th id="subEncabezado">Total                           </th>
                 </tr>
 EOF;
             }
 
             print <<<EOF
             <tr id ="trChico">
-                <td id="DetalleChicoCen">20-24                              </td>
+                <td id="DetalleChico">20 -  24                           </td>
                 <td id="DetalleChico">$contadorHombre_Uno_Reporte3          </td>
                 <td id="DetalleChico">$contadorMujer_Uno_Reporte3           </td>
                 <th id="DetalleChico">$contadorTotal_Uno_Reporte3           </th>
-                <td id="DetalleChicoCen">0-4                                </td>
+                <td id="DetalleChico">0 - 4                              </td>
                 <td id="DetalleChico">$contHom_Antig_Uno_Reporte3           </td>
                 <td id="DetalleChico">$contMuj_Antig_Uno_Reporte3           </td>
                 <th id="DetalleChico">$conTotalAntig_Uno_Reporte3           </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">25-29                              </td>
+                <td id="DetalleChico">25 - 29                            </td>
                 <td id="DetalleChico">$contadorHombre_Dos_Reporte3          </td>
                 <td id="DetalleChico">$contadorMujer_Dos_Reporte3           </td>
                 <th id="DetalleChico">$contadorTotal_Dos_Reporte3           </th>
-                <td id="DetalleChicoCen">5-9                                </td>
+                <td id="DetalleChico">5 - 9                              </td>
                 <td id="DetalleChico">$contHom_Antig_Dos_Reporte3           </td>
                 <td id="DetalleChico">$contMuj_Antig_Dos_Reporte3           </td>
                 <th id="DetalleChico">$conTotalAntig_Dos_Reporte3           </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">30-34                              </td>
+                <td id="DetalleChico">30 - 34                            </td>
                 <td id="DetalleChico">$contadorHombre_Tres_Reporte3         </td>
                 <td id="DetalleChico">$contadorMujer_Tres_Reporte3          </td>
                 <th id="DetalleChico">$contadorTotal_Tres_Reporte3          </th>
-                <td id="DetalleChicoCen">10-14                              </td>
+                <td id="DetalleChico">10 - 14                            </td>
                 <td id="DetalleChico">$contHom_Antig_Tres_Reporte3          </td>
                 <td id="DetalleChico">$contMuj_Antig_Tres_Reporte3          </td>
                 <th id="DetalleChico">$conTotalAntig_Tres_Reporte3          </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">35-39                              </td>
+                <td id="DetalleChico">35 - 39                            </td>
                 <td id="DetalleChico">$contadorHombre_Cuatro_Reporte3       </td>
                 <td id="DetalleChico">$contadorMujer_Cuatro_Reporte3        </td>
                 <th id="DetalleChico">$contadorTotal_Cuatro_Reporte3        </th>
-                <td id="DetalleChicoCen">15-19                              </td>
+                <td id="DetalleChico">15 - 19                            </td>
                 <td id="DetalleChico">$contHom_Antig_Cuatro_Reporte3        </td>
                 <td id="DetalleChico">$contMuj_Antig_Cuatro_Reporte3        </td>
                 <th id="DetalleChico">$conTotalAntig_Cuatro_Reporte3        </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">40-44                              </td>
+                <td id="DetalleChico">40 - 44                            </td>
                 <td id="DetalleChico">$contadorHombre_Cinco_Reporte3        </td>
                 <td id="DetalleChico">$contadorMujer_Cinco_Reporte3         </td>
                 <th id="DetalleChico">$contadorTotal_Cinco_Reporte3         </th>
-                <td id="DetalleChicoCen">20-24                              </td>
+                <td id="DetalleChico">20 - 24                            </td>
                 <td id="DetalleChico">$contHom_Antig_Cinco_Reporte3         </td>
                 <td id="DetalleChico">$contMuj_Antig_Cinco_Reporte3         </td>
                 <th id="DetalleChico">$conTotalAntig_Cinco_Reporte3         </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">45-49                              </td>
+                <td id="DetalleChico">45 - 49                            </td>
                 <td id="DetalleChico">$contadorHombre_Seis_Reporte3         </td>
                 <td id="DetalleChico">$contadorMujer_Seis_Reporte3          </td>
                 <th id="DetalleChico">$contadorTotal_Seis_Reporte3          </th>
-                <td id="DetalleChicoCen">25-29                              </td>
+                <td id="DetalleChico">25 - 29                            </td>
                 <td id="DetalleChico">$contHom_Antig_Seis_Reporte3          </td>
                 <td id="DetalleChico">$contMuj_Antig_Seis_Reporte3          </td>
                 <th id="DetalleChico">$conTotalAntig_Seis_Reporte3          </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">50-54                              </td>
+                <td id="DetalleChico">50 - 54                            </td>
                 <td id="DetalleChico">$contadorHombre_Siete_Reporte3        </td>
                 <td id="DetalleChico">$contadorMujer_Siete_Reporte3         </td>
                 <th id="DetalleChico">$contadorTotal_Siete_Reporte3         </th>
-                <td id="DetalleChicoCen">>=30                               </td>
+                <td id="DetalleChico">>= 30                              </td>
                 <td id="DetalleChico">$contHom_Antig_Siete_Reporte3         </td>
                 <td id="DetalleChico">$contMuj_Antig_Siete_Reporte3         </td>
                 <th id="DetalleChico">$conTotalAntig_Siete_Reporte3         </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">55-59                              </td>
+                <td id="DetalleChico">55 - 59                            </td>
                 <td id="DetalleChico">$contadorHombre_Ocho_Reporte3         </td>
                 <td id="DetalleChico">$contadorMujer_Ocho_Reporte3          </td>
                 <th id="DetalleChico">$contadorTotal_Ocho_Reporte3          </th>
@@ -663,7 +663,7 @@ EOF;
                 <th id="DetalleChico">&nbsp;                                </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">60-64                              </td>
+                <td id="DetalleChico"> 60 - 64                           </td>
                 <td id="DetalleChico">$contadorHombre_Nueve_Reporte3        </td>
                 <td id="DetalleChico">$contadorMujer_Nueve_Reporte3         </td>
                 <th id="DetalleChico">$contadorTotal_Nueve_Reporte3         </th>
@@ -673,7 +673,7 @@ EOF;
                 <th id="DetalleChico">&nbsp;                                </th>
             </tr>
             <tr id ="trChico">
-                <td id="DetalleChicoCen">>=65                               </td>
+                <td id="DetalleChico">>= 65                              </td>
                 <td id="DetalleChico">$contadorHombre_Diez_Reporte3         </td>
                 <td id="DetalleChico">$contadorMujer_Diez_Reporte3          </td>
                 <th id="DetalleChico">$contadorTotal_Diez_Reporte3          </th>
@@ -704,7 +704,7 @@ EOF;
             {
                 print <<<EOF
                 <tr>
-                    <th rowspan=2 id="subEncabezado"> Rubro     </th>
+                    <th rowspan=2 id="TotalesChico""> Rubro     </th>
                     <th colspan=2 id="subEncabezado"> Federales </th>
                     <th colspan=2 id="subEncabezado"> Estatales </th>
                     <th colspan=3 id="subEncabezado"> Total     </th>
@@ -779,19 +779,19 @@ EOF;
             {
                 print <<<EOF
                 <tr>
-                    <th rowspan=2 id="subEncabezado"> $rubro     </th>
+                    <th rowspan=2 id="TotalesChico"> $rubro     </th>
                     <th colspan=2 id="subEncabezado"> Federales </th>
                     <th colspan=2 id="subEncabezado"> Estatales </th>
                     <th colspan=3 id="subEncabezado"> Total     </th>
                 </tr>
 
                 <tr>
-                    <td id="subEncabezado">H                    </td>
-                    <td id="subEncabezado">M                    </td>
-                    <td id="subEncabezado">H                    </td>
-                    <td id="subEncabezado">M                    </td>
-                    <td id="subEncabezado">H                    </td>
-                    <td id="subEncabezado">M                    </td>
+                    <td id="subEncabezado">Hom                    </td>
+                    <td id="subEncabezado">Muj                    </td>
+                    <td id="subEncabezado">Hom                    </td>
+                    <td id="subEncabezado">Muj                    </td>
+                    <td id="subEncabezado">Hom                    </td>
+                    <td id="subEncabezado">Muj                    </td>
                     <td id="subEncabezado">Total                </td>
                 </tr>
 EOF;

@@ -4,7 +4,7 @@
     print $page->getTop();
     
     print <<<EOF
-       
+
         <div id="mainContent"> 
             <div id="menu">
                 <ul>

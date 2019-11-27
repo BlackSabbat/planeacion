@@ -19,7 +19,7 @@
         </td>
     </tr>
 
-    <table  width = 600>
+    <table id=federal width = 100%> 
 EOF;
 
     $myEmpleado = new empleado;
@@ -258,6 +258,9 @@ EOF;
         <th id="TotalesChico">$totalGral                   </th>
     </tr>
 
+    
+   
+
     <!-- Termina Tabla Plantilla Federal -->
 
     </table>
@@ -269,7 +272,7 @@ EOF;
     </table>
 
     <!--
-    <table  width = 600>
+    <table>
 EOF;
 
 
@@ -318,7 +321,7 @@ EOF;
         </tr>
     </table>
 
-    <table width = 600>
+    <table id=federal width = 100%> 
 EOF;
 
     $totalHombre_TiempoCompleto = 0;
@@ -509,6 +512,7 @@ EOF;
         <th id="TotalesChico">$totalGral                    </th>
     </tr>
 
+
 EOF;
 
     # Termina Tabla Plantilla Estatal
@@ -522,8 +526,11 @@ EOF;
     </table>
 
     <!--
-    <table  width = 600>
+    <table  width>
+    -->
 EOF;
+
+        /*
         # Consulta investigadores 
         # nota: estos datos no se consiceran en los totales
         $rubro = "&nbsp; &nbsp;&nbsp;&nbsp; * Investigadores";
@@ -543,8 +550,10 @@ EOF;
         $myEmpleado -> reporte1($consulta, $db, $host, $user, $pwd);
     
         $myEmpleado -> imprimirReporte1($rubro,$contadorHombre_TiempoCompleto, $contadorMujer_TiempoCompleto,$contadorHombre_TresCuartos, $contadorMujer_TresCuartos, $contadorHombre_MedioTiempo,     $contadorMujer_MedioTiempo, $contadorHombre_Asignatura, $contadorMujer_Asignatura,$swPrintHeadings);
-
+         */
         print <<<EOF
+        
+    <!--
     </table>
     -->
 

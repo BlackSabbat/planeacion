@@ -83,7 +83,7 @@ EOF;
                             */
                                 print <<<EOF
                             
-                                <form method = "POST" action="reporte.php">
+                                <form method = "POST" action="reportes.php">
                                     <fieldset>
                                         <legend>Reportes Generales</legend>
                                         <div>

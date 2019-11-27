@@ -17,7 +17,7 @@
 
     # Tabla de Posgrado Reporte General
     print <<<EOF
-    <table>
+    <table id=federal width = 100%>
 EOF;
     
         $plan = 'general';

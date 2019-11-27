@@ -18,7 +18,7 @@
         </tr>
     </table> 
 
-    <table width = 740>
+    <table id=federal width = 100%>
 EOF;
         $tabla2 = 'egresados';
         $tabla1 = 'matriculas_semestre';
@@ -48,7 +48,9 @@ EOF;
         </tr>
     </table> 
 
-    <table width = 740>
+    <table id=federal width = 100%>
+
+
 EOF;
 
         $tabla2 = 'egresados';
@@ -64,8 +66,10 @@ EOF;
         $myReprobado -> reporte1($BDSeleccionada, $tabla1, $tabla2, $tipo, $db, $host, $user, $pwd, $swPerEsc, $swEsconde);
 
         print <<<EOF
+
     </table>
 -->
+
 EOF;
 
     # cerrar conexion a BD

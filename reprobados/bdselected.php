@@ -44,7 +44,7 @@ EOF;
                         print <<< EOF
                         </td></tr>
                         <tr> <td>
-                            <form method = "POST" action="reporte.php">
+                            <form method = "POST" action="reportes.php">
                                 <fieldset>
                                     <legend>Reportes Generales</legend>
                                     <div>

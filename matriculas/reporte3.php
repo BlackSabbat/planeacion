@@ -10,7 +10,7 @@
     # Inicia Tabla de Posgrado
     print <<<EOF
 
-    <table>
+    <table id=federal width = 100%>
 EOF;
 
         $tabla = 'matriculas_semestre';

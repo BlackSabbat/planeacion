@@ -20,7 +20,7 @@
     {
 
         print <<<EOF
-        <table>
+        <table id=federal width = 100%>
 EOF;
     
          $myMatricula = new eficiencia_corchete;

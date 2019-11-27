@@ -20,7 +20,12 @@
 
     # Tabla de Perfil Desable, SNI y Discapacitados
     print <<<EOF
-    <table width = 500>
+    
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <table id=federal width = 100%> 
 EOF;
 
     $myEmpleado = new empleado;
@@ -102,18 +107,19 @@ EOF;
 
     # Tabla Dummie
     print <<<EOF
-    <table>
+    
+    
         <tr>
             <td>&nbsp;</td>
         </tr>
-    </table>
+    
 EOF;
 
 
 
 # Tablas de cuerpos academicos
     print <<<EOF
-    <table width = 500>
+    <table id=federal width = 100%> 
 EOF;
 
         # ---------------------

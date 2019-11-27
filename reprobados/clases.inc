@@ -54,7 +54,7 @@
             print <<<EOF
             </br>
             <tr>
-                <th id="subEncabezado" rowspan=2>LISTA DE CARRERAS          </th>
+                <th id="TotalesChico" rowspan=2>LISTA DE CARRERAS          </th>
 
 EOF;
                 //Esconder detalles adicionales del reporte
@@ -62,7 +62,7 @@ EOF;
                 {
                         print <<<EOF
                         <!-- <th id="subEncabezado" colspan=2> 0 Repr.           </th> -->
-                        <th id="subEncabezado" rowspan=2> ALUM. APROB.      </th>
+                        <th id="TotalesChico" rowspan=2> ALUM. APROB.      </th>
 
                         <!--
                         <th id="subEncabezado" rowspan=2> 1 Mat             </th>
@@ -70,10 +70,10 @@ EOF;
                         <th id="subEncabezado" rowspan=2> 3 Mat             </th>
                         <th id="subEncabezado" rowspan=2> > 3 Mat           </th>
                         -->
-                        <th id="subEncabezado" rowspan=2> ALUMN. REPR.     </th>
+                        <th id="TotalesChico" rowspan=2> ALUMN. REPR.     </th>
 
                         <!-- <th id="subEncabezado" colspan=2> Total             </th>  -->
-                        <th id="subEncabezado" rowspan=2> MATRÍCULA         </th>
+                        <th id="TotalesChico" rowspan=2> MATRÍCULA         </th>
 EOF;
                 }
 
@@ -97,10 +97,10 @@ EOF;
                     }
                 */
                     print <<<EOF
-                    <th id="subEncabezado">Alum Apr.                   </th>
-                    <th id="subEncabezado">Alum Repr.                   </th>
-                    <th id="subEncabezado">Creditos Apr.                    </th>
-                    <th id="subEncabezado">Creditos Repr.                   </th>
+                    <th id="TotalesChico">Alum Apr.                   </th>
+                    <th id="TotalesChico">Alum Repr.                   </th>
+                    <th id="TotalesChico">Creditos Apr.                    </th>
+                    <th id="TotalesChico">Creditos Repr.                   </th>
             </tr>
 EOF;
 

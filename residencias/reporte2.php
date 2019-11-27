@@ -7,7 +7,7 @@
 
     # Tabla del Reporte
     print <<<EOF
-    <table width = 840>
+    <table id=federal width = 100%>
 EOF;
 
     $myResidencia = new residencia;

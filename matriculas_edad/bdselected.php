@@ -52,7 +52,7 @@ EOF;
                             print <<< EOF
                             </p>
 
-                            <form method = "POST" action="reporte.php">
+                            <form method = "POST" action="reportes.php">
                                 <fieldset>
 
 EOF;

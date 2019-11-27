@@ -1,5 +1,5 @@
 <?php
-    class matricula
+    class matricula 
     {
         // matricula por carrera
         function reporte1($BDSeleccionada, $tabla, $tipo, $db, $host, $user, $pwd, $swPerEsc){  
@@ -199,7 +199,7 @@ EOF;
                     //IMPRIMIR DETALLE DEL REPORTE
                     print <<<EOF
                     <tr>
-                        <td id="SubEncabezadoChico" rowspan=3>$rubro        </td>
+                        <td id="DetalleMasChico" rowspan=3>$rubro        </td>
                         <td id="DetalleMasChico" >Hom                       </td>
                         <td id="DetallePrimerIngreso"> $row[hom1]           </td>
                         <td id="DetalleChico"> $row[hom2]                   </td>

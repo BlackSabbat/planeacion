@@ -19,15 +19,16 @@
 
     # Tabla del Reporte
     print <<<EOF
-    <table>
+   
        <tr>
            <td>
                Personal Federal:
            </td>
        </tr>
-    </table>
     
-    <table width = 500>
+    
+    <table id=federal width = 100%> 
+    
 EOF;
 
     $myEmpleado = new empleado;
@@ -152,12 +153,12 @@ EOF;
 
     # imprimir totales y cerrar tabla del reporte
     print <<<EOF
-        <tr>
-            <th id="TotalesChico">Totales (Federal)             </th>
+        <tr> 
+            <th id="TotalesChico">Totales (Edad)                </th>
             <th id="TotalesChico">$totalHombre_Reporte3         </th>
             <th id="TotalesChico">$totalMujer_Reporte3          </th>
             <th id="TotalesChico">$totalGral_Reporte3           </th>
-            <th id="TotalesChico">Totales (Federal)             </th>
+            <th id="TotalesChico">Totales (Antig.)              </th>
             <th id="TotalesChico">$totalHomAntig_Reporte3       </th>
             <th id="TotalesChico">$totalMujAntig_Reporte3       </th>
             <th id="TotalesChico">$totalGralAntig_Reporte3      </th>
@@ -190,7 +191,9 @@ EOF;
     #-----------------------------------
 
     print <<<EOF
-    <table width = 500>
+    
+    <table id=federal width = 100%> 
+
 EOF;
 
     # Consulta Empleados Plaza Docente
@@ -276,11 +279,11 @@ EOF;
     # imprimir totales y cerrar tabla del reporte
     print <<<EOF
         <tr>
-            <th id="TotalesChico">Totales (Estatal)             </th>
+            <th id="TotalesChico">Totales (Edad)                </th>
             <th id="TotalesChico">$totalHombre_Reporte3         </th>
             <th id="TotalesChico">$totalMujer_Reporte3          </th>
             <th id="TotalesChico">$totalGral_Reporte3           </th>
-            <th id="TotalesChico">Totales (Estatal)             </th>
+            <th id="TotalesChico">Totales (Antig.)              </th>
             <th id="TotalesChico">$totalHomAntig_Reporte3       </th>
             <th id="TotalesChico">$totalMujAntig_Reporte3       </th>
             <th id="TotalesChico">$totalGralAntig_Reporte3      </th>

@@ -55,7 +55,7 @@ EOF;
             </tr>
         </table>   
     
-        <table>
+        <table id=federal width = 100%>
 EOF;
     
             $tabla = 'matriculas_edad_sem';

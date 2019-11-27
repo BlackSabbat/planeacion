@@ -13,7 +13,7 @@
     //echo "swEsconde: $swEsconde </br>";
 
     print <<<EOF
-    <table>
+    <table id=federal width = 100%>
 EOF;
         $myReprobado = new reprobado;
 

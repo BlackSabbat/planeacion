@@ -18,7 +18,7 @@
 
     # Tabla de Licenciaturas Reporte General
     print <<<EOF
-    <table>
+    <table id=federal width = 100%>
 EOF;
     
         $plan = 'general';
@@ -53,7 +53,7 @@ EOF;
 
         # Tabla de Licenciaturas Plan 2004
         print <<<EOF
-        <table>
+        <table id=federal width = 100%>
 EOF;
             $plan = 'plan2004';
             $tipo = 'licenciatura';
@@ -81,7 +81,7 @@ EOF;
 
         # Tabla de Licenciaturas Plan 2010
         print <<<EOF
-        <table>
+        <table id=federal width = 100%>
 EOF;
             $plan = 'plan2010';
             $tipo = 'licenciatura';

@@ -20,7 +20,7 @@
         </td>
     </tr>
 
-    <table width = 600>
+    <table id=federal width = 100%>
 EOF;
 
     $myEmpleado = new empleado;
@@ -269,7 +269,7 @@ EOF;
         </tr>
     </table>
 
-    <table  width = 600>
+    <table id=federal width = 100%>
 EOF;
 
     $contadorHombre_Uno = 0;

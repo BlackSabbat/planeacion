@@ -399,7 +399,7 @@ EOF;
                     //IMPRIMIR DETALLE DEL REPORTE
                     print <<<EOF
                     <tr>
-                        <td id="SubEncabezadoChico" rowspan=3>$rubro        </td>
+                        <td id="DetalleChico" rowspan=3>$rubro        </td>
                         <td id="DetalleMasChico" >Hom                       </td>
                         <td id="DetalleChico" >$row[hom16]                  </td>
                         <td id="DetalleChico" >$row[hom17]                  </td>
@@ -1073,7 +1073,7 @@ EOF;
                             
                         print <<<EOF
                         <tr>
-                            <td id="SubEncabezadoChico" rowspan=3>$anio_impr       </td>
+                            <td id="DetalleChico" rowspan=3>$anio_impr       </td>
                             <td id="DetalleMasChico" >Hom                          </td>
                             <td id="DetalleChico" > $sumHom16                      </td>
                             <td id="DetalleChico" > $sumHom17                      </td>

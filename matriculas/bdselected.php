@@ -44,7 +44,7 @@ EOF;
                             print <<< EOF
                             </p>
                             <!-- <form method = "GET" action="reporte.php?reporte&nombreBD"> -->
-                            <form method = "POST" action="reporte.php">
+                            <form method = "POST" action="reportes.php">
                                 <fieldset>
                                     <legend>Selección de Reportes</legend>
                                     <div>

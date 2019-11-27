@@ -13,15 +13,15 @@
     # Tabla del Reporte
     print <<<EOF
 
-    <table>
+
        <tr>
            <td>
                Personal Federal:
            </td>
        </tr>
-   </table>
+  
 
-    <table width = 500>
+   <table id=federal width = 100%> 
 EOF;
 
     $myEmpleado = new empleado;
@@ -270,7 +270,7 @@ EOF;
        </tr>
     </table>
 
-    <table width = 500>
+    <table id=federal width = 100%> 
 EOF;
 
     $totalHombre_TiempoCompleto = 0;

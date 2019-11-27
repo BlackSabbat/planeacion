@@ -34,37 +34,20 @@
                     <li><a href="../contact.php">Contactar</a></li>
                 </ul>               
             </div> <!-- end menu -->
-            <table>
-                <td>
-                    <div id="sidebar">
-                        <h3>&nbsp;&nbsp;Menu de Reportes</h3>
-                        <ul>
-                        <table>
-                            <tr>
-                                <a href="../desercion.php");>Seleccionar Reporte </a></br>
-                            </tr>
+            <table width = 100%>
+                
+                <tr>
+                    <td>
+                        </br>
+                    </td>
+                </tr>
 
-                            </br>&nbsp
-                            </br>&nbsp
-                            
-                            <tr>
-                                <td>
-                                    <a href="javascript:window.print()" style='text-decoration:none;'>
-                                        <img src="/images/printer-xxl.jpg" border="0" alt="Este es el ejemplo de un texto alternativo">
-                                    </a>
-                                </td>
-                            </tr>
-                            
-                        </table>
-                        </ul>
-                    </div> <!-- end sidebar -->
-                </td>
                 <td>
-                    <table>
-                    <div id="content">
+                    
+                    <div id="reportes">
 EOF;
                         print <<< EOF
-                        <form method = "POST" action="reporte.php">                
+                        <form method = "POST" action="reportes.php">                
 EOF;
                                     switch ($reporteNombre)
                                     {
@@ -188,8 +171,8 @@ EOF;
                                     
                                     print <<< EOF
                         </form>
-                    </div> <!-- end content -->
-                    </table>
+                    </div> <!-- end reportes -->
+                   
                 </td>
             </table>
         </div> <!-- end main content -->

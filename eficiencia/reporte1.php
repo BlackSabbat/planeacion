@@ -47,7 +47,7 @@
     if ($reporteNombre == 'reporte1' or $reporteNombre == 'reporte3')
     {
         print <<<EOF
-        <table>
+        <table id=federal width = 100%>
 EOF;
 
         $myMatricula = new eficiencia_TNM;
@@ -491,7 +491,7 @@ EOF;
     if ($reporteNombre == 'reporte2' or $reporteNombre == 'reporte4')
     {
         print <<<EOF
-        <table>
+        <table id=federal width = 100%>
 EOF;
 
         $myMatricula = new eficiencia_TNM;
