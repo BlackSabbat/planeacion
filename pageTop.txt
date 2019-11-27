@@ -6,12 +6,12 @@
                     <img src="/images/logo.jpg" border="0" alt="Este es el ejemplo de un texto alternativo" width="70" height="70" align = "top">
                 </td>
                 <td>
-                    TEC Saltillo, Departamento de Planeación y Estadísticas
+                    TEC Saltillo, Planeación, Programación y Presupuestación
                 </td>
             </tr>
             <tr id="subtitulo">
                 <td id="subtitulo">
-                    Reportes
+                    Reportes de Estadísticas Básicas
                 <td>
             </tr>
         </table>
