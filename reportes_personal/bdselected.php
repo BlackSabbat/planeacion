@@ -14,7 +14,7 @@
                 
             </div> <!-- end menu -->
             <table>
-                <td>
+                <td valign = "top">
                     <div id="sidebar">
                         <h3>&nbsp;&nbsp;Menu</h3>
                         <ul>
@@ -23,7 +23,7 @@
                     </div> <!-- end sidebar -->
                 </td>
                 
-                
+                <td>
 
                     <div id="content">
                         </br>
@@ -129,7 +129,7 @@ EOF;
                         
                     print <<<EOF
                     </div> <!-- end content -->
-            
+                </td>
             </table>
         </div> <!-- end main content -->
 EOF;
