@@ -18,46 +18,50 @@
                 </ul>
                 
             </div> <!-- end menu -->
-            <div id="sidebar">
-                <h3>&nbsp;&nbsp;Menu</h3>
-                <ul>
-                    <!-- <li><a href="matriculas_edad/selectBD.php">Seleccionar Base de Datos</a></li> -->
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                </ul>
-            </div> <!-- end sidebar -->
-            <div id="content">
-                <p>Matrículas por Edades en Semestres.</p>
-                <p>Seleccionar tipo de reporte:</p>
+            <table>
+                <td>
+                    <div id="sidebar">
+                        <h3>&nbsp;&nbsp;Menu</h3>
+                        <ul>
+                            <!-- <li><a href="matriculas_edad/selectBD.php">Seleccionar Base de Datos</a></li> -->
+                            <br>&nbsp
+                            <br>&nbsp
+                            <br>&nbsp
+                            <br>&nbsp
+                        </ul>
+                    </div> <!-- end sidebar -->
+                </td>
 
-                <form method = "POST" action="matriculas_edad/selectBD.php">
-                    
-                        <div>
-                            
-                            <input type="radio" name="seleccion" value="semestre" checked>
-                            <label for="tabla1">por Semestre</label></br>
-                            <input type="radio" name="seleccion" value="anio">
-                            <label for="tabla2">por Año</label></br>
+                <td>
+                    <div id="content">
+                        <p>Matrículas por Edades en Semestres.</p>
+                        <p>Seleccionar tipo de reporte:</p>
 
-                            <!--
-                            <input type="checkbox" name="seleccion" value="anio">
-                            <label for "seleccion">por Año</label>
-                            -->
+                        <form method = "POST" action="matriculas_edad/selectBD.php">
 
-                            </br>
-                        </div>
-                        <div align = "left">
-                            <input id="submit" type="submit" name="submit" value="Aplicar">
-                        </div>
-                    
-                </form>
+                                <div>
 
-            </div> <!-- end content -->
+                                    <input type="radio" name="seleccion" value="semestre" checked>
+                                    <label for="tabla1">por Semestre</label></br>
+                                    <input type="radio" name="seleccion" value="anio">
+                                    <label for="tabla2">por Año</label></br>
+
+                                    <!--
+                                    <input type="checkbox" name="seleccion" value="anio">
+                                    <label for "seleccion">por Año</label>
+                                    -->
+
+                                    </br>
+                                </div>
+                                <div align = "left">
+                                    <input id="submit" type="submit" name="submit" value="Aplicar">
+                                </div>
+
+                        </form>
+
+                    </div> <!-- end content -->
+                <td>
+            </table>
         </div> <!-- end main content -->
 EOF;
       print $page->getBottom();

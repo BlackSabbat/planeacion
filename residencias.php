@@ -19,13 +19,7 @@
                         <h3>&nbsp;&nbsp;Menu</h3>
                         <ul>
                             <li><a href="residencias/selectBD.php">Base de Datos</a></li>
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
+                                                      
                         </ul>
                     </div> <!-- end sidebar -->
                 </td>

@@ -25,12 +25,7 @@
                         <ul>
                             <li><a href="selectBD.php">Base de Datos</a></li>
                             <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
+                            <br>&nbsp                           
                         </ul>
                     </div> <!-- end sidebar -->
                 </td>

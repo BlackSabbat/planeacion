@@ -25,13 +25,7 @@
                         <h3>&nbsp;&nbsp;Menu</h3>
                         <ul>
                             <li><a href="../egresados_titulados.php">Egresados y Titulados</a></li>
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
+                            <br>&nbsp 
                         </ul>
                     </div> <!-- end sidebar -->
                 </td>

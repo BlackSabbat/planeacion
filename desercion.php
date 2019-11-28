@@ -13,23 +13,25 @@
                 </ul>
                 
             </div> <!-- end menu -->
-            <div id="sidebar">
-                <h3>&nbsp;&nbsp;Menu</h3>
-                <ul>
-                    <li><a href="desercion/selectBD.php">Seleccionar Base de Datos</a></li>
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                </ul>
-            </div> <!-- end sidebar -->
-            <div id="content">
-                <p>Índice de Deserción.</p>
-                <p>Favor de seleccionar un periodo para el reporte.</p>
-            </div> <!-- end content -->
+
+            <table>
+                <td>
+                    <div id="sidebar">
+                        <h3>&nbsp;&nbsp;Menu</h3>
+                        <ul>
+                            <li><a href="desercion/selectBD.php">Seleccionar Base de Datos</a></li>
+                            
+                        </ul>
+                    </div> <!-- end sidebar -->
+                </td>
+
+                <td>
+                    <div id="content">
+                        <p>Índice de Deserción.</p>
+                        <p>Favor de seleccionar un periodo para el reporte.</p>
+                    </div> <!-- end content -->
+                </td>
+            </table>
         </div> <!-- end main content -->
 EOF;
       print $page->getBottom();

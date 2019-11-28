@@ -24,13 +24,8 @@
                         <h3>&nbsp;&nbsp;Menu</h3>
                         <ul>
                             <li><a href="../desercion.php">Índice de Deserción</a></li>
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
+                            
+                            
                         </ul>
                     </div> <!-- end sidebar -->
                 </td>

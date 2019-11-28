@@ -13,23 +13,22 @@
                 </ul>
                 
             </div> <!-- end menu -->
-            <div id="sidebar">
-                <h3>&nbsp;&nbsp;Menu</h3>
-                <ul>
-                    <li><a href="matriculas/selectBD.php">Seleccionar Base de Datos</a></li>
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                </ul>
-            </div> <!-- end sidebar -->
-            <div id="content">
-                <p>Matrículas de Alumnos.</p>
-                <p>Favor de seleccionar un periodo para la Base de Datos.</p>
-            </div> <!-- end content -->
+            <table>
+                <td>
+                    <div id="sidebar">
+                        <h3>&nbsp;&nbsp;Menu</h3>
+                        <ul>
+                            <li><a href="matriculas/selectBD.php">Seleccionar Base de Datos</a></li>
+                        </ul>
+                    </div> <!-- end sidebar -->
+                </td>
+                <td>
+                    <div id="content">
+                        <p>Matrículas de Alumnos.</p>
+                        <p>Favor de seleccionar un periodo para la Base de Datos.</p>
+                    </div> <!-- end content -->
+                    </td>
+            </table>
         </div> <!-- end main content -->
 EOF;
       print $page->getBottom();

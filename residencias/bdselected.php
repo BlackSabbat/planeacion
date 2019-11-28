@@ -24,12 +24,6 @@
                             <br>&nbsp
                             <br>&nbsp
                             <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-                            <br>&nbsp
-
                         </ul>
                     </div> <!-- end sidebar -->
                 </td>
@@ -56,7 +50,7 @@ EOF;
                                     >   
                                     &nbsp</br>
                                 </div>
-                                <div align = "center">
+                                <div>
                                     <input id="submit" type="submit" name="submit" value="Aplicar">
                                 </div>
                             </fieldset>

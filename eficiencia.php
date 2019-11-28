@@ -13,41 +13,43 @@
                 </ul>
                 
             </div> <!-- end menu -->
-            <div id="sidebar">
-                <h3>&nbsp;&nbsp;Menu</h3>
-                <ul>
-                    <!--<li><a href="eficiencia/selectBD.php">Seleccionar Base de Datos</a></li>-->
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                    <br>&nbsp
-                </ul>
-            </div> <!-- end sidebar -->
-            <div id="content">
-                <p>Eficiencia Terminal y de Egreso.</p>
-                <p>Seleccionar reporte para Eficiencia Terminal o de Egreso.</p>
-                <form method = "POST" action="eficiencia/selectBD.php">
-                    
-                        <div>
-                            <input type="radio" name="seleccion" value="1">
-                            <label>Eficiencia Terminal</label></br>
-                            <input type="radio" name="seleccion" value="2">
-                            <label>Eficiencia de Egreso</label></br>
-                            </br>
-                        </div>
-                        <div align = "left">
-                            <input id="submit" type="submit" name="submit" value="Aplicar">
-                        </div>
-                    
-                </form>
 
+            <table>
+                <td>
+                    <div id="sidebar">
+                        <h3>&nbsp;&nbsp;Menu</h3>
+                        <ul>
+                            <!--<li><a href="eficiencia/selectBD.php">Seleccionar Base de Datos</a></li>-->
+                            <br>&nbsp
+                            <br>&nbsp
+                            <br>&nbsp
+                            <br>&nbsp
+                           
+                        </ul>
+                    </div> <!-- end sidebar -->
+                </td>
 
+                <td>
+                    <div id="content">
+                        <p>Eficiencia Terminal y de Egreso.</p>
+                        <p>Seleccionar reporte para Eficiencia Terminal o de Egreso.</p>
+                        <form method = "POST" action="eficiencia/selectBD.php">
 
+                                <div>
+                                    <input type="radio" name="seleccion" value="1">
+                                    <label>Eficiencia Terminal</label></br>
+                                    <input type="radio" name="seleccion" value="2">
+                                    <label>Eficiencia de Egreso</label></br>
+                                    </br>
+                                </div>
+                                <div align = "left">
+                                    <input id="submit" type="submit" name="submit" value="Aplicar">
+                                </div>
 
-            </div> <!-- end content -->
+                        </form>
+                    </div> <!-- end content -->
+                </td>
+            </table>
         </div> <!-- end main content -->
 EOF;
       print $page->getBottom();
