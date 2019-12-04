@@ -177,12 +177,11 @@
             }
 
             //echo ("Grandes Privadas: $contGrande_Priv_Hombre </br>");
-        
 
         }
 
 
-        function reporteResidencias1($swPrintHeadings, $myResidencia, $BDSeleccionada, $db, $host, $user, $pwd, $base_datos)
+        function reporteResidencias1($swPrintHeadings, $myResidencia, $tabla, $BDSeleccionada, $db, $host, $user, $pwd, $base_datos, $swPerEsc)
         {
             global $contGrande_Priv_Hombre;
             global $contGrande_Priv_Mujer;
@@ -219,9 +218,38 @@
             
             //echo ("switch: $swPrintHeadings query: $consulta rubro: $rubro");
 
-            $consulta = "select distinct carrera from $BDSeleccionada group by carrera";
+            //CONSULTA para obtener carreras
+            //validar si reporte es por periodo escolar
+            if ($swPerEsc == "1") {
 
-            # Consulta por carrera
+                $mes_bd_1  = substr($BDSeleccionada,0,8);
+                $anio_bd_1 = substr($BDSeleccionada,8,4);
+
+                if ($mes_bd_1 == 'ene_jun_'){
+                    
+                    $mes_bd_2  = 'ago_dic_';
+                    $anio_bd_2 = $anio_bd_1 - 1;
+                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+                }
+
+                else {
+                    $mes_bd_2  = 'ene_jun_';
+                    $anio_bd_2 = $anio_bd_1 + 1;
+                    $periodo2  = $mes_bd_2 . strval($anio_bd_2);
+                }
+
+                $consulta = "select distinct carrera from $tabla where (periodo = '$BDSeleccionada' or periodo = '$periodo2') group by carrera";
+            } // FIN validacion si es por ciclo escolar
+
+            // Reporte es por Semestre
+            else {
+
+                $consulta = "select distinct carrera from $tabla where (periodo = '$BDSeleccionada') group by carrera";
+
+            }  // FIN analisis si reporte es por periodo escolar o por semestre 
+
+
+            # CONSULTA por carrera
             $query = $consulta;
             $result = $db->query($query);
             //echo "$query </br>";
@@ -265,8 +293,18 @@
                 //echo "Num Control: $row[num_control] nombre: $row[nombre] sexo: $row[sexo] </br>";
                 $rubro = trim($row['carrera']);
 
-                // Consulta por cada carrera
-                $consulta_carrera = "SELECT distinct carrera, num_control, nombre, sexo, telefono, correo, empresa, nombre_proyecto, asesor_interno, fecha_inicio, fecha_termino FROM $BDSeleccionada where carrera = '$rubro' GROUP BY carrera, id";
+                // CONSULTA por cada carrera
+                // validar si reporte es por ciclo escolar
+                if ($swPerEsc == "1") {
+
+                    $consulta_carrera = "SELECT distinct carrera, num_control, nombre, sexo, telefono, correo, empresa, nombre_proyecto, asesor_interno, fecha_inicio, fecha_termino FROM $tabla where ((periodo = '$BDSeleccionada' or periodo = '$periodo2') and (carrera = '$rubro')) GROUP BY carrera, id";
+                }
+
+                // reporte por semestre
+                else {
+
+                    $consulta_carrera = "SELECT distinct carrera, num_control, nombre, sexo, telefono, correo, empresa, nombre_proyecto, asesor_interno, fecha_inicio, fecha_termino FROM $tabla where ((periodo = '$BDSeleccionada') and (carrera = '$rubro')) GROUP BY carrera, id";
+                }
                 
                 // Ejecutar consulta
                 $query_carrera = $consulta_carrera;
@@ -307,7 +345,7 @@
 
                 } // while por cada carrera
 
-                $myResidencia -> imprimirReporte1($rubro, $contGrande_Priv_Hombre, $contGrande_Priv_Mujer,  $contGrande_Pub_Hombre, $contGrande_Pub_Mujer, $contGrande_EduPub_Hombre, $contGrande_EduPub_Mujer, $contGrande_EduPriv_Hombre, $contGrande_EduPriv_Mujer,$contMediana_Priv_Hombre, $contMediana_Priv_Mujer, $contMediana_Pub_Hombre, $contMediana_Pub_Mujer, $contMediana_EduPub_Hombre, $contMediana_EduPub_Mujer, $contMediana_EduPriv_Hombre, $contMediana_EduPriv_Mujer, $contPequena_Priv_Hombre, $contPequena_Priv_Mujer, $contPequena_Pub_Hombre, $contPequena_Pub_Mujer, $contPequena_EduPub_Hombre, $contPequena_EduPub_Mujer, $contPequena_EduPriv_Hombre, $contPequena_EduPriv_Mujer, $contMicro_Priv_Hombre, $contMicro_Priv_Mujer, $contMicro_Pub_Hombre, $contMicro_Pub_Mujer, $contMicro_EduPub_Hombre, $contMicro_EduPub_Mujer, $contMicro_EduPriv_Hombre, $contMicro_EduPriv_Mujer,$swPrintHeadings);
+                $myResidencia -> imprimirReporte1($rubro, $contGrande_Priv_Hombre, $contGrande_Priv_Mujer,  $contGrande_Pub_Hombre, $contGrande_Pub_Mujer, $contGrande_EduPub_Hombre, $contGrande_EduPub_Mujer, $contGrande_EduPriv_Hombre, $contGrande_EduPriv_Mujer,$contMediana_Priv_Hombre, $contMediana_Priv_Mujer, $contMediana_Pub_Hombre, $contMediana_Pub_Mujer, $contMediana_EduPub_Hombre, $contMediana_EduPub_Mujer, $contMediana_EduPriv_Hombre, $contMediana_EduPriv_Mujer, $contPequena_Priv_Hombre, $contPequena_Priv_Mujer, $contPequena_Pub_Hombre, $contPequena_Pub_Mujer, $contPequena_EduPub_Hombre, $contPequena_EduPub_Mujer, $contPequena_EduPriv_Hombre, $contPequena_EduPriv_Mujer, $contMicro_Priv_Hombre, $contMicro_Priv_Mujer, $contMicro_Pub_Hombre,$contMicro_Pub_Mujer, $contMicro_EduPub_Hombre, $contMicro_EduPub_Mujer, $contMicro_EduPriv_Hombre, $contMicro_EduPriv_Mujer,$swPrintHeadings);
 
                 $swPrintHeadings = 1;
 
@@ -520,5 +558,6 @@ EOF;
             $totalGral = $totalGral + $total_rubro ;
             
         }
+
     }
 ?>

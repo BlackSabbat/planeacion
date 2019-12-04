@@ -1,4 +1,4 @@
-<?php
+<?php 
 
     include ("mysql_conection.inc");
     require_once($_SERVER["DOCUMENT_ROOT"]."/classPage.php");
@@ -41,7 +41,8 @@
                                         <select name = "nombreBD">
 EOF;
 
-                                            $query = "show tables like 'residencias%'";
+                                            //$query = "show tables like 'residencias%'";
+                                            $query = "select distinctrow(periodo) from residencias";
                                             $result = $db->query($query);
                                                                             
                                             while( $row = $result->fetch_array()) {

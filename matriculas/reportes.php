@@ -50,14 +50,14 @@ EOF;
                                     $anio_bd_2 = $anio_bd_1 - 1;
                                     $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                    echo "<tr><td>Matrícula de Licenciatura y Posgrado en periodo: $periodo2 - $BDSeleccionada</td></td>";  
+                                    echo "<tr><td>Matrícula de Licenciatura y Posgrado en periodo: $periodo2 - $BDSeleccionada</td></tr>";  
                                 }
                                 else {
                                     $mes_bd_2  = 'ene_jun_';
                                     $anio_bd_2 = $anio_bd_1 + 1;
                                     $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                    echo "<tr><td>Matrícula de Licenciatura y Posgrado en periodo: $BDSeleccionada - $periodo2</td></td>";
+                                    echo "<tr><td>Matrícula de Licenciatura y Posgrado en periodo: $BDSeleccionada - $periodo2</td></tr>";
                                 }
                             }
                             else 
@@ -113,14 +113,14 @@ EOF;
                                     $anio_bd_2 = $anio_bd_1 - 1;
                                     $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                    echo "<tr><td>Matrícula de Licenciatura en periodo: $periodo2 - $BDSeleccionada</td></td>";  
+                                    echo "<tr><td>Matrícula de Licenciatura en periodo: $periodo2 - $BDSeleccionada</td></tr>";  
                                 }
                                 else {
                                     $mes_bd_2  = 'ene_jun_';
                                     $anio_bd_2 = $anio_bd_1 + 1;
                                     $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                    echo "<tr><td>Matrícula de Licenciatura en periodo: $BDSeleccionada - $periodo2</td></td>";
+                                    echo "<tr><td>Matrícula de Licenciatura en periodo: $BDSeleccionada - $periodo2</td></tr>";
                                 }
                             }
                             else 
@@ -178,14 +178,14 @@ EOF;
                                     $anio_bd_2 = $anio_bd_1 - 1;
                                     $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                    echo "<tr><td>Matrícula de Posgrado en periodo: $periodo2 - $BDSeleccionada</td></td>";  
+                                    echo "<tr><td>Matrícula de Posgrado en periodo: $periodo2 - $BDSeleccionada</td></tr>";  
                                 }
                                 else {
                                     $mes_bd_2  = 'ene_jun_';
                                     $anio_bd_2 = $anio_bd_1 + 1;
                                     $periodo2  = $mes_bd_2 . strval($anio_bd_2);
 
-                                    echo "<tr><td>Matrícula de Posgrado en periodo: $BDSeleccionada - $periodo2</td></td>";
+                                    echo "<tr><td>Matrícula de Posgrado en periodo: $BDSeleccionada - $periodo2</td></tr>";
                                 }
                             }
                             else 

@@ -7,7 +7,7 @@
 
     # Tabla del Reporte
     print <<<EOF
-    <table id=federal width = 100%>
+    <table id=federal width = 100%> 
 EOF;
 
     $myResidencia = new residencia;
@@ -18,11 +18,9 @@ EOF;
     # Consulta de residencias de ing. electrica
 
     $swPrintHeadings = 0;
-    //$rubro = "Ing. Eléctrica";
-    //$consulta = "select * from residencias where carrera = 'ing. electrica'";
-    //$myResidencia -> reporteResidencias1($swPrintHeadings, $consulta, $rubro, $myResidencia, $db, $host, $user, $pwd);
+    $tabla = 'residencias';
 
-    $myResidencia -> reporteResidencias1($swPrintHeadings, $myResidencia, $BDSeleccionada, $db, $host, $user, $pwd, $base_datos);
+    $myResidencia -> reporteResidencias1($swPrintHeadings, $myResidencia, $tabla, $BDSeleccionada, $db, $host, $user, $pwd, $base_datos, $swPerEsc);
 
 
     print <<<EOF
