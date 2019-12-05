@@ -46,10 +46,9 @@
                         <form method = "POST" action="reportes.php">
 EOF;
 
-                        // Todos los rubros
+
                         If (($reporteNombre == "reporte2") and ($todas == "1")) {
                             
-                            // Encabezado si reporte es por periodo escolar
                             if ($swPerEsc == "1") {
                                 // Encabezado
                                 $mes_bd_1  = substr($BDSeleccionada,0,8);
@@ -70,8 +69,6 @@ EOF;
                                     echo "<tr><td>Residencias en periodo: $BDSeleccionada - $periodo2</td></td>";
                                 }
                             }
-
-                            // Encabezado si reporte es por semestre
                             else 
                                 echo "<tr><td> Residencias en $BDSeleccionada </td></tr>";
 
