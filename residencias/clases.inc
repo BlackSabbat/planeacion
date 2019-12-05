@@ -20,10 +20,6 @@
             // Tabla del reporte
             global $residencias;
 
-            //foreach ($residencias as $i => $value) {
-            //        $residencias[$i] = 0;
-            //}
-
             if ($tipo == 'GRANDE')
             {
                 if ($sector == '')
