@@ -25,11 +25,11 @@
                 if ($sector == '')
                 {
                     if ($sexo == 'H') {
-                        $contGrande_Priv_Hombre ++;
+                        
                         $residencias['GraPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contGrande_Priv_Mujer ++;
+                        
                         $residencias['GraPriMuj'] ++;
                     }
                     //echo"H: $contGrande_Priv_Hombre  M:$contGrande_Priv_Mujer<br>";
@@ -37,33 +37,33 @@
                 if ($sector == 'SECTOR PUBLICO')
                 {
                     if ($sexo == 'H') {
-                        $contGrande_Pub_Hombre ++;
+                       
                         $residencias['GraPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contGrande_Pub_Mujer ++;
+                        
                         $residencias['GraPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PUBLICO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PUBLICO'))
                 {
                     if ($sexo == 'H') {
-                        $contGrande_EduPub_Hombre ++;
+                   
                         $residencias['GraEduPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contGrande_EduPub_Mujer ++;
+                     
                         $residencias['GraEduPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PRIVADO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PRIVADO'))
                 {
                     if ($sexo == 'H') {
-                        $contGrande_EduPriv_Hombre ++;
+                        
                         $residencias['GraEduPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contGrande_EduPriv_Mujer ++;
+                      
                         $residencias['GraEduPriMuj'] ++;
                     }
                 }
@@ -73,44 +73,44 @@
                 if ($sector == '')
                 {
                     if ($sexo == 'H') {
-                        $contMediana_Priv_Hombre ++;
+                 
                         $residencias['MedPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMediana_Priv_Mujer ++;
+                       
                         $residencias['MedPriMuj'] ++;
                     }
                 }
                 if ($sector == 'SECTOR PUBLICO')
                 {
                     if ($sexo == 'H') {
-                        $contMediana_Pub_Hombre ++;
+                       
                         $residencias['MedPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMediana_Pub_Mujer ++;
+                    
                         $residencias['MedPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PUBLICO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PUBLICO'))
                 {
                     if ($sexo == 'H') {
-                        $contMediana_EduPub_Hombre ++;
+                       
                         $residencias['MedEduPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMediana_EduPub_Mujer ++;
+                      
                         $residencias['MedEduPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PRIVADO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PRIVADO'))
                 {
                     if ($sexo == 'H') {
-                        $contMediana_EduPriv_Hombre ++;
+                       
                         $residencias['MedEduPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMediana_EduPriv_Mujer ++;
+                     
                         $residencias['MedEduPriMuj'] ++;
                     }
                 }
@@ -120,44 +120,44 @@
                 if ($sector == '') 
                 {
                     if ($sexo == 'H') {
-                        $contPequena_Priv_Hombre ++;
+                       
                         $residencias['PeqPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contPequena_Priv_Mujer ++;
+              
                         $residencias['PeqPriMuj'] ++;
                     }
                 }
                 if ($sector == 'SECTOR PUBLICO')
                 {
                     if ($sexo == 'H') {
-                        $contPequena_Pub_Hombre ++;
+
                         $residencias['PeqPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contPequena_Pub_Mujer ++;
+     
                         $residencias['PeqPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PUBLICO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PUBLICO'))
                 {
                     if ($sexo == 'H') {
-                        $contPequena_EduPub_Hombre ++;
+                       
                         $residencias['PeqEduPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contPequena_EduPub_Mujer ++;
+                 
                         $residencias['PeqEduPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PRIVADO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PRIVADO'))
                 {
                     if ($sexo == 'H') {
-                        $contPequena_EduPriv_Hombre ++;
+                
                         $residencias['PeqEduPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contPequena_EduPriv_Mujer ++;
+                  
                         $residencias['PeqEduPriMuj'] ++;
                     }
                 }
@@ -168,44 +168,44 @@
                 if ($sector == '')
                 {
                     if ($sexo == 'H') {
-                        $contMicro_Priv_Hombre ++;
+                
                         $residencias['MicPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMicro_Priv_Mujer ++;
+              
                         $residencias['MicPriMuj'] ++;
                     }
                 }
                 if ($sector == 'SECTOR PUBLICO')
                 {
                     if ($sexo == 'H') {
-                        $contMicro_Pub_Hombre ++;
+                  
                         $residencias['MicPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMicro_Pub_Mujer ++;
+                
                         $residencias['MicPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PUBLICO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PUBLICO'))
                 {
                     if ($sexo == 'H') {
-                        $contMicro_EduPub_Hombre ++;
+            
                         $residencias['MicEduPubHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMicro_EduPub_Mujer ++;
+               
                         $residencias['MicEduPubMuj'] ++;
                     }
                 }
                 if (($sector == 'SECTOR PRIVADO EDUCATIVO') OR ($sector == 'SECTOR EDUCATIVO PRIVADO'))
                 {
                     if ($sexo == 'H') {
-                        $contMicro_EduPriv_Hombre ++;
+     
                         $residencias['MicEduPriHom'] ++;
                     }
                     if ($sexo == 'M') {
-                        $contMicro_EduPriv_Mujer ++;
+    
                         $residencias['MicEduPriMuj'] ++;
                     }
                 }
